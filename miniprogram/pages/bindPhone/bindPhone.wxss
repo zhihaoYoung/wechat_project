@@ -1,0 +1,54 @@
+/* miniprogram/pages/person/person.wxss */
+.loginpage{
+  padding: 0 50rpx;
+}
+.loginttile{
+  font-size: 52rpx;
+  margin-bottom: 50rpx;
+  display:block;
+}
+.place-holder{
+  color:#ccc;
+}
+.input{
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #c1c1c1;
+}
+.mininfo{
+  color:#999999;
+  font-size: 24rpx;
+}
+.btnbox{
+  width: 100%;
+}
+.btn-login{
+  font-weight: normal;
+  margin-top: 60rpx;
+  width: 100%!important;
+  background: #FFB606!important;
+  font-size: 36rpx!important;
+  height: 88rpx!important;
+}
+.rel{
+  position: relative;
+}
+.getCode{
+  position: absolute;
+  right: 0;
+  top:40rpx;
+  color:#FFB606;
+}
+.rulecenter{
+  margin-top: 23rpx;
+  font-size: 28rpx;
+  color:#292929;
+  margin-top: 30rpx;
+}
+.loginfooter{
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  color:#B8B8B8
+}
+.logintext{
+  color:#FFB606
+}

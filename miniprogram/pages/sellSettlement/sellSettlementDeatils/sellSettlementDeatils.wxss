@@ -1,0 +1,348 @@
+/* miniprogram/pages/sellSettlement/sellSettlementDeatils/sellSettlementDeatils.wxss */
+.onlyboxsecond{
+  margin-left: 50rpx;
+  border:1rpx solid #e0e0e0!important
+}
+.van-button__text{
+  color:#FFB606!important
+}
+.onlyboxsecond_yellow{
+  border:1px solid #FFA102!important
+}
+
+.van-dialog__footer{
+  display: none!important;
+}
+.bgcenters{
+  position: relative;
+  z-index: 3;
+}
+.yellowF{
+  color:#FFA102
+}
+.canclebox:after{
+  content: '';
+  background: #CCCCCC;
+  width: 1rpx;
+  height: 90rpx;
+  top:0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.btn-flex{
+  margin: 0 30rpx;
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  justify-content: space-around;
+  border-top: 1rpx solid #CCCCCC;
+}
+.van-popup--center{
+  width: 600rpx;
+  border-radius: 12rpx;
+}
+
+.detailsbox{
+  color:#292929;
+  font-size: 30rpx;
+  padding: 20rpx 40rpx 50rpx;
+  
+}
+.titlebox_popup{
+  font-size: 36rpx;
+  text-align: center;
+  color:#292929;
+  margin: 40rpx 0;
+}
+.sectionbox{
+  margin-bottom: 30rpx;
+}
+.sectionbox .flex-betweens{
+  margin-bottom: 7rpx;
+  font-size: 28rpx;
+  color:#999999
+}
+.flex-between_{
+  line-height: 38rpx;
+   margin-bottom: 7rpx;
+  font-size: 28rpx;
+  color:#999999;
+}
+.flex-between_ div:nth-child(1){
+  margin-right: 70rpx;
+}
+.flex-betweens{
+  display: flex;
+  justify-content: space-between
+}
+.countyellow{
+  color:#FFB606!important
+}
+.blackFont{
+  color:#010000!important
+}
+.mart{
+  margin-top: 60rpx;
+}
+.toptitle{
+  margin-bottom: 25rpx;
+  font-size: 36rpx;
+  color:#010000;
+  font-weight: bold;
+}
+.topcenter{
+  margin-top: 300rpx;
+  padding: 0 60rpx 150rpx;
+}
+.money{
+  padding: 40rpx 0;
+  font-size: 52rpx;
+}
+.money .b{
+  display: inline-block;
+}
+.f32{
+  font-size: 32rpx;
+}
+
+.btnsee{
+  border:1rpx solid rgba(255,182,6,1);
+  color:#fff;
+  width:480rpx;
+  height:64rpx;
+  text-align: center;
+  margin:0 auto;
+  line-height: 64rpx;
+  background:rgba(255,182,6,1);
+  border-radius:32rpx;
+}
+.footerbox_center{
+  padding: 0 30rpx;
+}
+.btn_yellow{
+  width: 320rpx;
+  position: relative;
+  bottom: 30rpx;
+  border-radius: 8rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border:0;
+  text-align: center;
+  background: #FFB606;
+  font-size: 36rpx;
+  color:#fff;
+}
+.onlybox{
+  font-size: 28rpx;
+  border:1rpx solid #CCCCCC;
+  color:#999999;
+  background: #f5f5f5;
+}
+.overconfirm{
+  background: #E0E0E0;
+}
+.topboxcenter i{
+  font-size: 60rpx;
+  margin-top: 10rpx;
+}
+  .topboxcenter{
+    position: absolute;
+    top:120rpx;
+    left: 60rpx;
+    
+    
+  }
+  .topboxcenter .topbox div{
+      font-weight: bold;
+      margin-left: 20rpx;
+      font-size: 40rpx;
+    }
+  .topboxcenter .topbox .orderdetails{
+    font-weight: normal;
+    font-size: 28rpx;
+  }
+  .bgcenter{
+    background: #fff;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .centerboxs{
+    position: relative;
+    z-index: 2;
+  }
+  .ordermunber{
+    font-weight: bold;
+    font-size: 28rpx;
+    color:#010000;
+    border-bottom: 1rpx dotted #E6E6E6;
+    padding-bottom: 25rpx;
+    margin-bottom: 25rpx;
+  }
+  .secondtbox{
+    font-size: 28rpx;
+    color: #999;
+  }
+  .flex-between .titlegray{
+    color:#999999;
+    font-size: 28rpx;
+    margin-bottom: 15rpx;
+  }
+  .flex-between .titleblack{
+    font-size: 28rpx;
+    color:#999999;
+  }
+  .orderbox{
+    width:80%;
+    text-align: center;
+    border-radius: 12rpx;
+    padding: 50rpx;
+    background: #fff;
+    /* background: red; */
+    /* position: relative; */
+    position: absolute;
+    left: 3.5%;
+    /* margin-left: -30%; */
+    top:20rpx;
+    box-shadow: 0 3rpx 9rpx 3rpx #e2e2e2;
+  }
+  .topbg{
+    background:#feac11;
+    width:750rpx;
+    height:153rpx;
+  }
+  .redfont{
+    color:#FA6054
+  }
+  .footerbox{
+    position: fixed;
+    bottom: 30rpx;
+    margin: 0 30rpx;
+   
+  }
+  .footerbox .addone{
+    border-radius:8rpx;
+   font-size: 36rpx;
+   border:1rpx solid #FFB606;
+   color:#FFB606;
+   height: 88rpx;
+   width: 240rpx;
+   margin-right: 30rpx;
+  }
+  .footerbox .gosend{
+    border-radius:8rpx;
+   font-size: 36rpx;
+    width: 420rpx;
+    height: 88rpx;
+    border:1rpx solid #FFB606;
+    background:#FFB606;
+    color:#000000
+  }
+  .imgminbox{
+    margin-left: 25rpx;
+    width: 64rpx;
+    height: 64rpx;
+    margin-bottom: 20rpx;
+  }
+  .bg_box{
+    background: #f7f7f7;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .personbox{
+    z-index: 2;
+    position: relative;
+  }
+  .righticon{
+    width: 20rpx;
+    right: 0;
+    top:30%;
+    transform: translate(-50%);
+    position: absolute;
+  }
+  .abs{
+    position: absolute;
+    top:150rpx;
+    left: 30rpx;
+    color:#fff;
+  }
+  .abs .imgbox{
+    width: 100rpx;
+  }
+  .list{
+    border-radius: 8rpx;
+    margin-top: 20rpx;
+    background: #fff;
+  }
+  .msgbox .b{
+    font-size: 40rpx;
+    font-weight: normal;
+  }
+  .msgbox{
+    border-radius: 8rpx;
+    background: #fff;
+    position: relative;
+    top:-50rpx;
+    padding: 30rpx 40rpx;
+    width: 690rpx;
+    margin: 0 auto;
+    color:#999999;
+    font-size: 24rpx;
+   
+   
+  }
+  .msgbox .firstdiv{
+    width: 320rpx;
+    border-right: 1rpx dotted #E6E6E6;
+  }
+  .msgbox .seconddiv{
+    width: 300rpx;
+    margin-left: 40rpx;
+  }
+  .namebox{
+      margin-left: 30rpx;
+      font-size: 36rpx;
+      
+    }
+    .namebox .phone{
+      font-size: 26rpx!important;
+    }
+  .centerbox .mintitle{
+      color:#343434;
+      font-size: 30rpx;
+      padding: 25rpx 30rpx;
+      border-bottom: 1rpx solid #E6E6E6;
+    }
+    .centerbox .flexs{
+      padding: 0 25rpx;
+      display: flex;
+     
+    }
+    .centerbox .flexs div.flexbox{
+      flex: 1;
+      font-size: 26rpx;
+      color:#707070;
+    } 
+    .centerbox div.flexbox div:nth-child(2){
+      text-indent: 5rpx;
+    }
+  .centerbox{
+    padding: 0 30rpx;
+   
+  }
+  .centerbox .flex{
+    padding: 0 15rpx 0 35rpx;
+   
+  }
+  .centerbox .flex div.flexbox{
+    flex: 1;
+    font-size: 26rpx;
+    color:#707070;
+    margin:35rpx 0rpx 60rpx 0;
+  }

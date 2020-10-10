@@ -1,0 +1,94 @@
+.detailsbox{
+  color:#CCCCCC;
+  font-size: 28rpx;
+}
+.titlebox{
+    font-size: 36rpx;
+    margin-bottom: 19rpx;
+  }
+.checkbox{
+  margin: 90px auto 40rpx;
+  background: #20c88b;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  position: relative;
+  
+}
+
+.checkbox .i{
+  position: absolute;
+  left: 50%;
+  top:20%;
+  font-size: 86rpx;
+  color:#fff;
+  transform: translate(-50%);
+}
+
+.cerbox .cite{
+  display: block;
+  margin-bottom: 30rpx;
+}
+.cerbox .p{
+  font-size: 28rpx;
+}
+
+.cerbox .userbox .i{
+  font-style: normal;
+}
+.cerbox .userbox{
+  font-size: 32rpx;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.cerbox .userbox  .b{
+  margin-right: 40rpx;
+  display: inline-block;
+  padding: 30px 0;
+  font-weight: normal;
+  width: 150rpx;
+}
+.cerbox .imgboxlist{
+  margin-bottom: 50rpx;
+}
+.cerbox .idCard{
+  width: 90%;
+}
+.cerbox .photobox{
+  width: 20%;
+  position: absolute;
+  left: 50%;
+  top:30%;
+  transform: translate(-50%);
+}
+  .cerbox{
+    padding: 0 40rpx 40rpx ;
+    
+    
+    
+  }
+  .cerbox .tip{
+    color:#B8B8B8;
+    font-size: 24rpx;
+    margin:30rpx 0 50rpx  0;
+  }
+    .h1{
+      font-size: 40rpx;
+      margin-bottom: 40rpx;
+      font-weight: normal;
+    }
+    .input{
+      padding: 30rpx 0;
+      border-bottom: 1px solid #CCCCCC;
+    }
+    .btn_yellow{
+      margin-top: 80rpx;
+      background: #FFB606;
+      color:#fff;
+      border-radius: 44rpx;
+      border:0;
+      line-height: 88rpx;
+      width: 650rpx;
+      height: 88rpx;
+      font-size: 36rpx;
+    }

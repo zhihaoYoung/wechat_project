@@ -1,0 +1,55 @@
+<view class="loginpage">
+ <van-toast id="van-toast" />
+  <text class="loginttile">
+    注册
+  </text>
+  <block>
+    <input class="input" placeholder="请输入手机号码" type="tel" placeholder-class="place-holder" maxlength="11" data-prop='username'  bindinput='changeInput'></input>
+  </block>
+  <view  class="rel">
+    <block>
+      <input class="input" placeholder="请输入验证码" type="tel" placeholder-class="place-holder" maxlength="6" data-prop='phoneCode'   bindinput='changeInput'></input>
+      <text class="getCode" bindtap="getCode">{{phoneTime}}</text>
+    </block>
+  </view>
+  <block>
+    <input class="input" placeholder="请输入密码" type="password" placeholder-class="place-holder" maxlength="20" data-prop='password'  bindinput='changeInput'></input>
+  </block>
+  <view class="rulecenter flex">
+  <view>
+    <van-checkbox  
+    value="{{ checkboxShape }}" 
+    checked-color="#FFB606" 
+    shape="square" 
+    data-key="checkboxShape"
+    bind:change="noop"
+    ></van-checkbox>
+  </view>
+  <view class="fontbox">
+    注册即代表同意<text bindtap="rulebox" class="rulebox">《中鑫金用户注册协议》</text>
+  </view>
+  </view>
+  <view class="btnbox">
+   <button type="primary" class="btn-login"  bindtap="handleRegister" >注册</button>
+  </view>
+  <view class="tc loginfooter">
+    <view>已有账号？去 <view class="logintext"> <navigator url="/pages/login/login" > 登录</navigator></view></view>
+  </view>
+</view>
+<!-- 注册协议弹窗 -->
+<van-dialog
+  use-slot
+  title=""
+  bind:confirm = "side"
+  show="{{ show }}"
+  show-cancel-button
+  closeOnClickOverlay ="{{trueFilter}}"
+  bind:close="onClose"
+>
+  <view class="iscomfir">
+  <!-- <view> -->
+    <!-- {{ruleCenter}} -->
+  <!-- </view> -->
+    <rich-text nodes="{{ruleCenter}}"></rich-text>
+  </view>
+</van-dialog>

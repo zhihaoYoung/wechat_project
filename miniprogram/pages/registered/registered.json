@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-dialog": "../../miniprogram_npm/vant-weapp/dialog/index",
+    "van-checkbox": "../../miniprogram_npm/vant-weapp/checkbox/index",
+    "van-checkbox-group": "../../miniprogram_npm/vant-weapp/checkbox-group/index"
+  },
+  "navigationBarTitleText": "注册"
+  
+}

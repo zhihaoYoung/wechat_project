@@ -1,0 +1,72 @@
+/* miniprogram/pages/person/person.wxss */
+.loginpage{
+  padding: 0 50rpx;
+}
+.loginttile{
+  font-size: 52rpx;
+  margin-bottom: 50rpx;
+  display:block;
+}
+.navigation{
+  display: inline-block;
+}
+.fontbox{
+  margin-left: 10rpx;
+}
+.rel{
+  position: relative;
+}
+.getCode{
+  color:#ffb606;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top:40rpx
+}
+.place-holder{
+  color:#ccc;
+}
+.input{
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #c1c1c1;
+}
+.btnbox{
+  width: 100%;
+}
+.btn-login{
+  font-weight: normal;
+  margin-top: 60rpx;
+  width: 100%!important;
+  background: #FFB606!important;
+  font-size: 36rpx!important;
+  height: 88rpx!important;
+}
+.rulecenter{
+  margin-top: 23rpx;
+  font-size: 28rpx;
+  color:#292929;
+  margin-top: 30rpx;
+}
+.loginfooter{
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  color:#B8B8B8
+}
+.logintext{
+  display: inline-block;
+  color:#FFB606
+}
+.rulebox{
+  color:#FFB606
+}
+h1{
+  font-size: 20rpx;
+}
+.iscomfir{
+  padding: 0 35rpx;
+  overflow-y: scroll;
+  height: 590rpx;
+}
+.van-dialog__footer{
+  display: none!important;
+}

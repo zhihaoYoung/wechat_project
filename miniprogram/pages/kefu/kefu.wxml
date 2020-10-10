@@ -1,0 +1,37 @@
+ <view class="topborder"></view>
+ <view class="flex kefubox">
+  <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/kefu1.png" alt="" mode="widthFix"  class="headbox"></image> 
+  <view  class="flex2">
+    <view class="titlebox">4001-886-722</view>
+    <view class="detailsbox">人工客服工作时间：9:00-18:00</view>
+  </view>
+  <view class="phonekefu">
+  <!-- <a href="4001886722"> -->
+    <view bindtap="phonecall" data-phone="4001886722">
+     <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/kefuphone.png"  mode="widthFix" ></image> 
+     </view>
+  <!-- </a> -->
+  </view>
+</view>
+
+<view class="flex kefubox">
+  <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/kefu2.png" alt="" mode="widthFix"  class="headbox"></image> 
+  <view  class="flex2">
+    <view class="titlebox">{{peoplelist.managerName}}</view>
+    <view class="detailsbox">{{peoplelist.managerDes}}</view>
+  </view>
+  <view class="phonekefu">
+   <view bindtap="phonecall" data-phone="{{peoplelist.managerPhone}}">
+    <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/kefuphone.png" alt="" mode="widthFix" ></image> 
+   </view>
+  </view>
+</view>
+
+  <!-- 二维码 -->
+  <center class="orcodebox">
+    <view class="kefuwechat">
+      <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/kefuwechat.png" alt="" mode="widthFix" ></image>
+    </view>
+    <view class="h2">中鑫金企业客服微信</view>
+    <view class="details">截图保存在微信中使用扫一扫打开即可享受更多优质服务</view>
+  </center>

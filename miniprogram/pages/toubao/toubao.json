@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-field": "../../miniprogram_npm/vant-weapp/field/index",
+    "van-checkbox": "../../miniprogram_npm/vant-weapp/checkbox/index",
+    "van-dialog": "../../miniprogram_npm/vant-weapp/dialog/index",
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+    "van-area": "../../miniprogram_npm/vant-weapp/area/index",
+    "van-checkbox-group": "../../miniprogram_npm/vant-weapp/checkbox-group/index"
+  },
+  "navigationBarTitleText": "货运投保"
+}

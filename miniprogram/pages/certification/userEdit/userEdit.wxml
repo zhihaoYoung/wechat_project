@@ -1,0 +1,31 @@
+ <view class="topborder"></view>
+ <van-toast id="van-toast" />
+<view class="cerbox usercenter"  wx:if="{{!successpage}}">
+      <view class="tip">请填写银行卡信息，该信息主要用于资金发放，为保证及时性，请务必填写正确，且为本人银行账号。</view>  
+      <view class="cite">
+      <p>真实姓名</p>
+      <input class="weui-input" class="input" placeholder="请输入真实姓名" value="{{form.name}}" disabled/>
+      <!-- <el-input placeholder="请输入真实姓名" v-model="formdata.name"></el-input> -->
+      </view>
+      <view  class="cite">
+      <p>身份证号</p>
+      <input class="weui-input" class="input" placeholder="请输入身份证号" value="{{form.idNum}}" disabled/>
+      </view>
+      <view  class="cite">
+      <p>银行卡号</p>
+       <input class="weui-input" class="input" placeholder="请输入有效的银行卡号" data-prop='bankNo'  bindinput="changeInput"/>
+      </view>
+      <view  class="cite">
+      <p>银行名称</p>
+      <input class="weui-input" class="input" placeholder="请输入银行名称" data-prop='bankName'  bindinput="changeInput"/>
+      </view>
+      <view  class="cite">
+      <p>所属支行</p>
+      <input class="weui-input" class="input" placeholder="请输入支行名称（非必填）" data-prop='bankAddress'  bindinput="changeInput"/>
+      </view>
+      <view class="tc">
+        <view class="btn_yellow" bindtap="postData">提交</view>
+      </view>
+    </view>
+
+  

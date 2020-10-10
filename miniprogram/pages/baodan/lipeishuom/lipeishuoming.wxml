@@ -1,0 +1,25 @@
+<!--miniprogram/pages/baodan/lipeishuom/lipeishuoming.wxml-->
+<view class="centerbox">
+      <view class="step_1">
+        <view class="h1">【保险责任范围】</view>
+        <view class="p">本保险分为邮包险和邮包一切险两种。被保险货物遭受损失时，本保险按保险单上订明承保险标的条款规定负赔偿责任。 </view>
+        <view class="h2">（一）邮包险 </view >
+        <view class="p">本保险负责赔偿： </view>
+        <view class="p">1．被保险邮包在运输途中由于恶劣气候、雷电、海啸、地震、洪水自然灾害或由于运输工具遭受搁浅、触礁、沉没、碰撞、倾覆、出轨、坠落、失踪或由于失火、爆炸意外事故所造成的全部或部分损失。 </view>
+        <view class="p">2．被保险人对遭受承保责任内危险的货物采取抢救、防止或减少货损的措施而支付的合理费用，但以不超过该批被救货物的保险金额为限。</view>
+        <view  class="h2">（二）邮包一切险 </view >
+        <view class="p"> 本保险负责赔偿： </view>
+        <view class="p">除包括上述邮包险的各项责任外，本保险还负责被保险邮包在运输途中由于外来原因所致的全部或部分损失。 </view>
+      </view>
+      <view class="step_2">
+        <view class="h1">【理赔流程】</view>
+        <view class="p">第一步：电话报案</view>
+        <view class="p">拨打0755-22692109联系保险公司或拨打中鑫金客服4001-886-722寻求协助</view>
+        <view class="p">第二步：审核材料</view>
+        <view class="p">按照保险公司要求，准备理赔材料，提交保险公司审核</view>
+        <view class="p">第三步：赔付完成</view>
+        <view class="p">保险公司材料核实通过后，发放赔款</view>
+      </view>
+      <!-- 申请理赔 -->
+      <!-- <view class="Application"><router-link :to="{ name: 'claimedit'}">申请理赔</router-link></view> -->
+    </view>      

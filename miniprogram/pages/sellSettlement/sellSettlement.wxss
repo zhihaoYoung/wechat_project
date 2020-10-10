@@ -1,0 +1,73 @@
+/* miniprogram/pages/sellSettlement/sellSettlement.wxss */
+page{
+  background: #f7f7f7;
+}
+.emptycenter{
+  width: 600rpx;
+  margin: 30rpx auto;
+  display: block;
+}
+.emptyfont{
+  color:#c1c1c1
+}
+.yeartime{
+  padding: 0 30rpx;
+  color:#B8B8B8;
+  font-size: 28rpx;
+  padding: 17rpx 30rpx;
+}
+.emptybox{
+  height: auto;
+  width: 120rpx;
+}
+.datacenter{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.iconfont{
+  width: 70rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  background: #ff5e1f;
+  color:#fff;
+  margin-top: 10rpx;
+}
+.timebox{
+  margin-top: 10rpx;
+  color:#999
+}
+.listdata{
+  padding: 30rpx 0;
+  /* margin:0 30rpx; */
+  /* background: #fff; */
+  border-bottom: 1px solid #E0E0E0;
+}
+.PendPayment{
+  color: #39ba1f;
+}
+.weightbox{
+  color:#292929;
+  font-size: 30rpx;
+}
+.timebox{
+  font-size: 24rpx;
+}
+.moneybox{
+  font-size: 32rpx;
+}
+.arrowicon{
+  color:#999;
+  margin-left: 10rpx;
+  margin-top: 30rpx;
+}
+.statusbox{
+  text-align: right;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+.toConfirmed{
+  color: #ff5e1f;
+}

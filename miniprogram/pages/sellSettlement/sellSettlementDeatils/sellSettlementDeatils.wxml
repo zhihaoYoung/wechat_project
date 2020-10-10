@@ -1,0 +1,138 @@
+<wxs module="dateFr" src="../../../filter/dateFr.wxs"></wxs>
+<!-- 对结算单有疑问 -->
+ <van-dialog
+    use-slot
+    title="提示"
+    show="{{ show }}"
+  >
+   <view class="detailsbox">如结算单有误需拨打中鑫金客服人工核对修改，是否拨打中鑫金客服电话：4001-886-722</view>
+    <view class="flex btn-flex rel">
+        <!-- <view class="canclebox" bindtap="canclebox" >取消</view> -->
+        <view class="yellowF" bindtap="canclebox">确认</view>
+      </view>
+  </van-dialog>
+
+  <!-- 确认无误 -->
+   <van-dialog
+    use-slot
+    title="结算确认"
+    show="{{ confirmbox }}"
+  >
+   <view class="detailsbox">尊敬的用户，您正在进行结算确认，请仔细核对您的来料重量与结算价格。确认无误后，中鑫金将在一个工作日内完成打款。</view>
+    <view class="flex btn-flex rel">
+        <view class="canclebox" bindtap="canclebox" >取消</view>
+        <view class="yellowF" bindtap="submitdata">确认</view>
+      </view>
+  </van-dialog>
+  <view class="centerboxs" >
+    <!-- 定价详情 -->
+    <view class="topbg"></view>
+      <!-- 订单详情 -->
+      <view class="orderbox">
+        <center>
+          <!-- 用户没确认 -->
+          <view  class=" h1 f32" wx:if="{{datalist.status == 0}}">请确认下方结算信息</view>
+          <!-- 用户已经确认 -->
+          <view  class="h1 f32" wx:if="{{datalist.status == 1 && payType != 0}}">打款已完成，请查收</view>
+          <view  class="h1 f32" wx:if="{{payType == 0}}">您的款项正在飞速打款中....</view>
+          <view class="money"><view class="b f32">￥</view>{{moneybox}}</view>
+          <view class="btnsee f32" bindtap="dianzidanju" data-oid="{{datalist.orderId}}" >查看电子单据</view>
+          <!-- <el-button class="btnsee f32" @click="dianzidanju">查看电子单据</el-button> -->
+        </center>
+      </view>
+      <view class="topcenter">
+        <view class="toptitle">物料明细</view>
+        <view>
+          <view class="flex-between"   wx:for="{{datalist.itemList}}" wx:key="name" wx:for-item="items">
+            <view class="titlegray">{{items.name}}</view>
+            <view  class="secondtbox">{{items.weightZheZu}}克</view>
+          </view>
+        </view>
+
+        <!-- 结算明细 -->
+        <view class="toptitle mart">结算明细</view>
+        <view wx:for="{{datalist.itemList}}" wx:key="name" wx:for-item="items" >
+          <view class="sectionbox">
+            <view class="flex-betweens">
+              <view>{{items.name}}</view>
+              <view>{{items.weightZheZu}}克</view>
+            </view>
+            <view class="flex-betweens">
+              <view>{{items.name}}结算价格(单价)</view>
+              <view>{{items.price}}元</view>
+            </view>
+            <view class="flex-betweens">
+              <view>{{items.name}}合计金额：</view>
+              <view class="blackFont">{{items.money}}元</view>
+            </view>
+          </view>
+        </view>
+        <!-- 合计金额 -->
+        <view class="toptitle mart">合计金额</view>
+        <view>
+          <view class="flex-between">
+            <view class="titlegray">提纯费：</view>
+            <view class="blackFont titleblack">{{datalist.moneyTiChun}}元</view>
+          </view>
+          <view  class="flex-between">
+            <view class="titlegray"> 快递费：</view>
+            <view class="blackFont titleblack">{{datalist.moneyYunFei}}元</view>
+
+            </view>
+          <view  class="flex-between">
+            <view class="titlegray"> 保险费：</view>
+            <view class="blackFont titleblack">{{datalist.moneyBaoXiang}}元</view>
+
+            </view>
+          <view  class="flex-between">
+            <view class="titlegray"> 合计费用：</view>
+            <view class="countyellow titleblack">{{datalist.moneyTotal}}元</view>
+
+            </view>
+        </view>
+
+        <!-- 订单信息 -->
+        <view class="toptitle mart ">订单信息</view>
+        <view>
+          <view class="flex-between_ flex">
+            <view>顺丰单号：</view>
+            <view>{{datalist.orderNoExpress}}</view>
+          </view>
+          <view  class="flex-between_ flex">
+            <view> 结算单号：</view>
+            <view>{{ datalist.orderNo}}</view>
+          </view>
+          <view  class="flex-between_ flex">
+            <view> 开单时间：</view>
+            <view> {{datalist.date}}</view>
+          </view>
+          <view  class="flex-between_ flex">
+            <view> 用户姓名：</view>
+            <view> {{datalist.name}}</view>
+          </view>
+          <view  class="flex-between_ flex">
+            <view> 联系电话：</view>
+            <view> {{datalist.phone}}</view>
+          </view>
+          <view  class="flex-between_ flex">
+            <view> 收款账号：</view>
+            <view> {{bankuser}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 用户没确认 -->
+      <view wx:if="{{datalist.status == 0}}" class="flex footerbox_center">  
+        <view class="btn_yellow onlybox" bindtap="questionbox">对结算单有异议？</view>
+        <view class="btn_yellow onlyboxsecond onlyboxsecond_yellow" bindtap="postData" >确认无误</view>
+       </view>
+
+      <view wx:if="{{payType == 0}}" class="flex footerbox_center"> 
+        <view class="btn_yellow onlybox"   bindtap="questionbox">对结算单有异议？</view>
+        <view class="btn_yellow overconfirm onlyboxsecond grayborder" >已确认</view>
+       </view>
+
+      <!-- 用户已确认 -->
+       <view wx:if="{{datalist.status == 1 && payType != 0}}" class="flex footerbox_center"> 
+        <view class="btn_yellow" style="width:100%" bindtap="addorder">再来一单</view>
+       </view>
+  </view>

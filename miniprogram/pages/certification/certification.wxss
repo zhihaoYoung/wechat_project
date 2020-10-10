@@ -1,0 +1,71 @@
+.cerbox .userbox{
+  font-size: 32rpx;
+  border-bottom: 1px solid #CCCCCC;
+ 
+}
+.cerbox .i{
+  padding: 30rpx 0;
+  font-style: normal;
+}
+.cerbox .b{
+  margin-right: 40rpx;
+  display: inline-block;
+  padding: 30rpx 0;
+  font-weight: normal;
+  width: 150rpx;
+}
+.cerbox .imgboxlist{
+  overflow: hidden;
+  width: 650rpx;
+  height: 450rpx;
+  border-radius: 8rpx;
+  margin-bottom: 50rpx;
+}
+.cerbox .idCard{
+  /* max-width: 100%; */
+  width: 600rpx;
+  height: 405rpx;
+  /* max-height: 100%; */
+  position: absolute;
+  left: 50%;
+  margin-left: -300rpx;
+}
+.cerbox .photobox{
+  /* position: relative; */
+  z-index: 5;
+  width: 130rpx;
+  height: 130rpx;
+  position: absolute;
+  left: 50%;
+  top:30%;
+  transform: translate(-50%);
+}
+.cerbox .tip{
+  color:#B8B8B8;
+  font-size: 24rpx;
+  margin:30rpx 0 50rpx  0;
+}
+  .cerbox{
+    padding: 0 40rpx 40rpx;
+  }
+    .detailsbox{
+      margin-bottom: 25rpx;
+      color:#292929;
+      font-size: 28rpx;
+    }
+    .h1{
+      font-size: 40rpx;
+      margin-bottom: 40rpx;
+      font-weight: normal;
+    }
+    .btn_yellow{
+      margin-top: 120rpx;
+      background: #FFB606;
+      color:#fff;
+      border-radius: 44rpx;
+      border:0;
+      line-height: 88rpx;
+      width: 650rpx;
+      height: 88rpx;
+      font-size: 36rpx;
+    }

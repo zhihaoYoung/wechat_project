@@ -1,0 +1,158 @@
+  <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+ <view class="topborder"></view>
+ <view class="tc" wx:if="{{isloading}}">
+  <van-loading custom-class="demo-loading"  />
+</view>
+<van-tabs active=" active " bind:change="ChangeF" wx:if="{{!isloading}}">
+  <van-tab title="全部" name="a">
+   <!-- 全部 -->
+    <view wx:if="{{isloaddata}}">
+      <view class="system_msg"   wx:for="{{listdata}}" wx:key="id" wx:for-index="bindex" wx:for-item="items" >
+        <view class="msgbox">
+          <view class="flex-between h2">
+              <view>顺丰单号：{{items.expressNo ? items.expressNo : '-'}}</view>
+            <view class="statusbox">{{items.insuranceStatus == 'NONE' ? '待投保' : '已投保'}} </view>
+          </view>
+          <view class="cityflex">
+            <view class="div">
+              {{items.fromCity}}
+            </view>
+            <view class="arrowbox b">
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/arrownpx.png" alt="" mode="widthFix" ></image>
+              <view class="i">{{items.status == 'TRANSPORT'? '运输中' : ( items.status == 'WAIT_SEND' ? '待取件':'已签收')}}</view>
+            </view>
+            <view class="div">
+              {{items.toCity}}
+            </view>
+          </view>
+          <view class="flex">
+            <view class="div">下单时间：</view>
+            <view class="div">{{dateFr.dateFormat(items.expressTime)}}</view>
+          </view>
+          <view class="flexs endflex">
+             <view class="gosendproduct"><navigator url="/pages/toubao/toubao">去投保</navigator></view>
+            <view class="canclebox"><navigator url="/pages/logistics/logisticsDetails/logisticsDetails?id={{items.orderExpressNo}}">物流详情</navigator></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tc emptycenter" wx:if="{{!isloaddata}}">
+      <van-loading custom-class="demo-loading"  />
+      <!-- <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+      <view class="emptyfont">暂无数据</view> -->
+    </view>
+  </van-tab>
+  <van-tab title="待取件">
+    <view wx:if="{{isloaddata}}">
+      <view class="system_msg"  wx:for="{{listdata}}" wx:key="id" wx:for-index="bindex" wx:for-item="items" >
+        <view class="msgbox">
+          <view class="flex-between h2">
+              <view>顺丰单号：{{items.expressNo ? items.expressNo : '-'}}</view>
+            <view class="statusbox">{{items.insuranceStatus == 'NONE' ? '待投保' : '已投保'}} </view>
+          </view>
+          <view class="cityflex">
+            <view class="div">
+              {{items.fromCity}}
+            </view>
+            <view class="arrowbox b">
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/arrownpx.png" alt="" mode="widthFix" ></image>
+              <view class="i">待取件</view>
+            </view>
+            <view class="div">
+              {{items.toCity}}
+            </view>
+          </view>
+          <view class="flex">
+            <view class="div">下单时间：</view>
+             <view class="div">{{dateFr.dateFormat(items.expressTime)}}</view>
+          </view>
+          <view class="flexs endflex">
+            <view class="gosendproduct"><navigator url="/pages/toubao/toubao">去投保</navigator></view>
+            <view class="canclebox"><navigator url="/pages/logistics/logisticsDetails/logisticsDetails?id={{items.orderExpressNo}}">物流详情</navigator></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tc emptycenter" wx:if="{{!isloaddata}}">
+     <van-loading custom-class="demo-loading"  />
+      <!-- <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+      <view class="emptyfont">暂无数据</view> -->
+    </view>
+    </van-tab>
+  <van-tab title="运输中">
+   <view wx:if="{{isloaddata}}">
+      <view class="system_msg"  wx:for="{{listdata}}" wx:key="id" wx:for-index="bindex" wx:for-item="items" >
+        <view class="msgbox">
+          <view class="flex-between h2">
+              <view>顺丰单号：{{items.expressNo ? items.expressNo : '-' }}</view>
+            <view class="statusbox">{{items.insuranceStatus == 'NONE' ? '待投保' : '已投保'}} </view>
+          </view>
+          <view class="cityflex">
+            <view class="div">
+              {{items.fromCity}}
+            </view>
+            <view class="arrowbox b">
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/arrownpx.png" alt="" mode="widthFix" ></image>
+              <!-- items.status == 'TRANSPORT'? '运输中' : ( items.status == 'WAIT_SEND' ? '待取件':'已签收') -->
+              <view class="i">运输中</view>
+            </view>
+            <view class="div">
+              {{items.toCity}}
+            </view>
+          </view>
+          <view class="flex">
+            <view class="div">下单时间：</view>
+            <view class="div">{{dateFr.dateFormat(items.expressTime)}}</view>
+          </view>
+          <view class="flexs endflex">
+            <view class="gosendproduct"><navigator url="/pages/toubao/toubao">去投保</navigator></view>
+            <view class="canclebox"><navigator url="/pages/logistics/logisticsDetails/logisticsDetails?id={{items.orderExpressNo}}">物流详情</navigator></view>
+            <!-- <view class="canclebox">取消</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+        <view class="tc emptycenter" wx:if="{{!isloaddata}}">
+          <van-loading custom-class="demo-loading"  />
+      <!-- <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+      <view class="emptyfont">暂无数据</view> -->
+    </view>
+  </van-tab>
+  <van-tab title="已签收">
+    <view wx:if="{{isloaddata}}">
+      <view class="system_msg"  wx:for="{{listdata}}" wx:key="id" wx:for-index="bindex" wx:for-item="items" >
+        <view class="msgbox">
+          <view class="flex-between h2">
+            <view>顺丰单号：{{items.expressNo ? items.expressNo : '-'}}</view>
+            <view class="statusbox">{{items.insuranceStatus == 'NONE' ? '待投保' : '已投保'}} </view>
+          </view>
+          <view class="cityflex">
+            <view class="div">
+              {{items.fromCity}}
+            </view>
+            <view class="arrowbox b">
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/arrownpx.png" alt="" mode="widthFix" ></image>
+              <view class="i">已签收</view>
+            </view>
+            <view class="div">
+              {{items.toCity}}
+            </view>
+          </view>
+          <view class="flex">
+            <view class="div">下单时间：</view>
+            <view class="div">{{dateFr.dateFormat(items.expressTime)}}</view>
+          </view>
+          <view class="flexs endflex">
+            <view class="gosendproduct"><navigator url="/pages/toubao/toubao">去投保</navigator></view>
+            <view class="canclebox"><navigator url="/pages/logistics/logisticsDetails/logisticsDetails?id={{items.orderExpressNo}}">物流详情</navigator></view>
+          </view>
+        </view>
+      </view>
+    </view>
+        <view class="tc emptycenter" wx:if="{{!isloaddata}}">
+          <van-loading custom-class="demo-loading"  />
+      <!-- <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+      <view class="emptyfont">暂无数据</view> -->
+    </view>
+  </van-tab>
+</van-tabs>

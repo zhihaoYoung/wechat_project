@@ -1,0 +1,18 @@
+/* miniprogram/pages/about/about.wxss */
+.h1{
+  text-align: center;
+  margin:30rpx 0;
+}
+.aboutimg{
+  width: 490rpx;
+  display: block;
+  margin:50rpx auto;
+}
+.centerbox{
+  padding: 0 20rpx;
+  font-size: 26rpx;
+}
+.p{
+  margin-bottom: 20rpx;
+  line-height: 42rpx;
+}

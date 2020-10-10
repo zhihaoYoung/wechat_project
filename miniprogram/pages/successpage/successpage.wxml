@@ -1,0 +1,65 @@
+<!--miniprogram/pages/successpage/successpage.wxml-->
+
+ <view class="topborder"></view>
+ <!-- 卖出成功 -->
+ <view class="centerbox" wx:if="{{sellbool}}">
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">定价提交成功</view>
+  <view class="infobox">我们将尽快为您审核,请留意短信通知</view>
+  <view class="btnbox" bindtap="pricingRecordslog">查看定价记录</view>
+  <view class="flex-around footerbox">
+    <view  class="btnstyle" bindtap="pickUpPage">上门取货</view>
+    <view class="btnstyle" bindtap="seedata">查看行情</view>
+  </view>
+</view>
+
+<!-- 结算 -->
+ <view class="centerbox" wx:if="{{jiesuan}}">
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">您的结算单已确认</view>
+  <view class="infobox">飞速打款中，请留意银行短信通知</view>
+  <view class="btnbox" bindtap="seedata">查看行情</view>
+</view>
+
+<!-- 注册成功 -->
+<view class="centerbox" wx:if="{{zhuce}}">
+   <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">注册成功</view>
+  <view class="infobox"></view>
+  <el-button class="btnbox" bindtap="gologin">前往登录</el-button>
+</view>
+
+<!-- 重置密码成功 -->
+<view class="centerbox" wx:if="{{chongzhimima}}">
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">重置密码成功</view>
+  <view class="infobox"></view>
+  <el-button class="btnbox" bindtap="gologin">前往登录</el-button>
+</view>
+
+<!-- 上门结算 -->
+ <view class="centerbox" wx:if="{{shangmen}}">
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">预约成功</view>
+  <view class="infobox">取货人员正在飞速赶来</view>
+  <view class="btnbox" bindtap="claimedit">立即投保</view>
+  <view class="btnbox onlywhite" bindtap="seedata">查看行情</view>
+</view>
+
+
+<!-- 投保 -->
+ <view class="centerbox" wx:if="{{toubao}}">
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">投保申请已提交</view>
+  <view class="infobox">稍后可在“我的保险”查看投保结果</view>
+  <view class="btnbox" bindtap="myclaim">查看保单</view>
+  <view class="btnbox onlywhite" bindtap="seedata">返回行情</view>
+</view>
+
+<!-- 认证 -->
+ <view class="centerbox"  wx:if="{{renzheng}}" >
+  <van-icon name="checked" size="80px" color="#1fc88c"/>
+  <view class="titlebox">资料提交成功</view>
+  <view class="infobox">我们将在3个工作日内将审核结果发送您的手机</view>
+  <view class="btnbox" bindtap="seedata">返回行情</view>
+</view>

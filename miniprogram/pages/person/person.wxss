@@ -1,0 +1,176 @@
+/* miniprogram/pages/person/person.wxss */
+.firstfilter{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  z-index: 5;
+  background: transparent;
+}
+.van-dialog__footer{
+  display: none!important;
+}
+.title{
+  font-size: 30rpx;
+  text-align: center;
+  margin: 20rpx 0;
+}
+.centerbox_dialog{
+  padding: 0 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.gocer{
+  position: relative;
+  font-size: 32rpx;
+  padding: 25rpx 0;
+  margin-top: 30rpx;
+  border-top: 1rpx solid #ccc;
+  color:#ffb606;
+  text-align: center;
+}
+.bennerimg image{
+  width: 100%;
+}
+.nologin{
+  padding-top: 20rpx;
+}
+.headbox{
+  border-radius: 50%;
+  width: 90rpx;
+  height: 90rpx;
+}
+.canclebox{
+  color:#c1c1c1;
+}
+.canclebox::after{
+    content: '';
+    width: 2rpx;
+    height: 70rpx;
+    background: #c1c1c1;
+    position: absolute;
+    left: 50%;
+    margin-left:-2rpx;
+    top:10rpx
+}
+
+.headbox{
+  position: relative;
+  top:10rpx;
+  width: 90rpx;
+}
+
+.redfont{
+  color:#FA6054;
+  font-size: 40rpx;
+}
+.righticon image{
+  position: absolute;
+  right: 15rpx;
+  top:28rpx
+}
+.namebox{
+  font-size: 40rpx;
+}
+
+.centerbox{
+  background: #fff;
+  top: -60rpx;
+  position: relative;
+  margin:0 30rpx;
+}
+.mintitle{
+  border-bottom: 1rpx solid #E6E6E6;
+  padding: 25rpx 30rpx;
+  
+  font-size: 30rpx;
+}
+page{
+  background: #f7f7f7;
+}
+.flexbox{
+  padding: 40rpx 0 60rpx;
+  width: 180rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color:#707070
+}
+.imgminbox image{
+  margin-bottom: 20rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+.firstdiv{
+  border-right: 1rpx dotted #CCCCCC;
+  width: 48%;
+  padding-right: 30rpx;
+  margin-right: 50rpx;
+}
+.seconddiv{
+  width: 48%;
+}
+.rightimages{
+  width: 19rpx;
+}
+.msgbox{
+  border-radius: 8rpx;
+  background: #fff;
+  position: relative;
+  top:-100rpx;
+  padding: 30rpx 50rpx;
+  width: 80%;
+  margin: 0 auto;
+  color:#999999;
+  font-size: 24rpx;
+}
+.footerbox{
+  color:#999999;
+  font-size: 28rpx;
+}
+.footerbox b{
+  color:#F2C07C;
+  font-weight: normal;
+}
+
+.footerboximg{
+  display: block;
+  margin:50rpx auto;
+  width: 315rpx;
+  height: 96rpx;
+  padding-bottom: 30rpx;
+}
+.bennerimg  .headertopright{
+  position: absolute;
+  right: 0rpx;
+  top:30rpx;
+  text-align: right;
+  width: 10%!important;
+}
+.rightboxcenter{
+  right: 50rpx;
+  top:90rpx; 
+  position: absolute;
+  width: 300rpx;
+  height: 120rpx;
+  /* background: red; */
+}
+.userinfobox{
+  font-size: 36rpx;
+  color:#FFFFFF;
+  margin-top: 18rpx;
+  margin-left: 10rpx;
+}
+.phone{
+  font-size: 26rpx;
+}
+.userinfo{
+  position: absolute;
+  left: 30rpx;
+  top:90rpx;
+  z-index: 2;
+}
+.bennerimg .peopleicon{
+  width: 98rpx;
+  border-radius: 50%;
+}

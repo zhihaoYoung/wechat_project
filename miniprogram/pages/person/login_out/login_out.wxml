@@ -1,0 +1,36 @@
+ <view class="topborder"></view>
+<view class="centerbox">
+        <view class="flex-between bgwhite">
+          <view class="flex">
+            <!-- <view class="imgbox" v-if="userInfo.auth == 'UNPOST'"><image src="@/assets/images/no_cerhead.png"></image></view>
+            <view class="imgbox" v-if="userInfo.auth == 'POST'"><image src="@/assets/images/no_cerhead.png"></view> -->
+            <!-- <view class="imgbox" v-if="userInfo.auth == 'DONE'"> -->
+              <!-- <template v-if="userInfo.avatar"> -->
+                <!-- <image :src="userInfo.avatar"></image> -->
+              <!-- </template> -->
+              <!-- <template v-else> -->
+                <image src="/assets/images/people.png" mode="widthFix" class="headeimg"></image>
+              <!-- </template> -->
+            <!-- </view> -->
+            <view class="phonebox">{{user_moible}}</view>
+          </view>
+          <view class="statusbox" wx:if="{{user_auth == 'UNPOST'}}" bindtap="gocer">请认证<i class="el-icon-arrow-right"></i></view>
+          <view class="statusbox" wx:if="{{user_auth == 'POST'}}"  >认证中</view>
+          <view class="statusbox overcer"  wx:if="{{user_auth == 'DONE'}}" >已认证</view>
+        </view>
+        <navigator url="/pages/repassword/repassword">
+          <view class="flex-between  bgwhite">
+            <view>修改密码</view>
+            <!-- <view> <image src="/assets/images/righticon.png" alt="" mode="widthFix" class="headertopright"></image></view> -->
+          </view>
+        </navigator>
+        <navigator url="/pages/bank/bank">
+          <view class="flex-between  bgwhite">
+            <view>银行账号</view>
+            <!-- <view> <image src="/assets/images/righticon.png" alt="" mode="widthFix" class="headertopright"></image></view> -->
+          </view>
+        </navigator>
+        <!-- 退出登录 -->
+        <!--  @click="loginout" -->
+        <view class="loginout" bindtap="loginoutbtn">退出登录</view>
+    </view>

@@ -1,0 +1,5 @@
+<!--miniprogram/pages/ywdetails/yedetails.wxml-->
+<view class="topborder"></view>
+<view>
+  <image src="/assets/images/yewyshuoming.png" mode="widthFix"></image>
+</view>

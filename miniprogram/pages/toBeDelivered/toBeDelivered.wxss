@@ -1,0 +1,75 @@
+/* miniprogram/pages/pricingRecords/pricingRecords.wxss */
+.van-tabs__line{
+  background: #FBAC1E!important;
+}
+.van-tabs__wrap--scrollable .van-tab{
+  flex: 0 0 18%!important;
+}
+page{
+  height: 100%;
+  background: #f5f5f5;
+}
+.emptybox{
+  height: auto;
+  width: 120rpx;
+}
+.emptycenter{
+  width: 600rpx;
+  margin: 30rpx auto;
+  display: block;
+}
+.emptyfont{
+  color:#c1c1c1
+}
+.demo-loading{
+  padding: 50rpx 0;
+  margin: 0 auto;
+}
+.info_0{
+  margin-bottom: 35rpx;
+  font-size: 32rpx;
+  color:#010000
+}
+.info_1,.info_2{
+  margin-bottom: 30rpx;
+}
+.cardfooter{
+  margin-top: 30rpx;
+}
+.pricebox{
+  color:#ffc543;
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+  border: 1px solid #ffc543
+}
+.statusBox{
+  background: #fCDAE2;
+  color:#FC4E7F;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  width: 120rpx;
+  text-align: center;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+.gosend{
+  color:#fff!important;
+  background: #ffc543!important;
+  margin-right: 10rpx;
+}
+.val_black{
+  color:#333333
+}
+.centerbox{
+  color:#CCCCCC;
+  width: 83%;
+  font-size: 28rpx;
+  box-shadow: 0 0 5rpx 5rpx #ececec;
+  margin:30rpx auto 10rpx;
+  padding: 35rpx 35rpx 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.van-notice-bar__wrap{
+  font-size: 24rpx!important;
+}

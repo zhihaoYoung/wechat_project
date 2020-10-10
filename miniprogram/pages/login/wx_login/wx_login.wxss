@@ -1,0 +1,14 @@
+/* miniprogram/pages/login/wx_login/wx_login.wxss */
+.loginbox{
+  width: 150rpx;
+  margin:90rpx auto 50rpx;
+}
+.loginbtn{
+  background: #07c160;
+  color:#fff;
+  border-radius: 8rpx;
+  text-align: center;
+  width: 350rpx;
+  margin:0 auto;
+  padding: 15rpx 0;
+}

@@ -1,0 +1,106 @@
+<!-- 实时金价 -->
+    <view class="yellowbox"></view>
+      <view class="boxgoldprice">
+        <view class="h2">实时价格(元/克)</view>
+        <view class="pricebox">{{pricebox}}</view>
+      </view>
+      <view class="bottombox">
+      <!-- 参数选择 -->
+      <view v-if="!loadingtrue">
+        <view class="tc centerboxloading">
+        <!-- <van-loading   size="50"  /> 加载 -->
+         </view>
+      </view>
+      <view class="userselect" v-if="loadingtrue">
+        <view class="title_box">选择类别</view>
+        <view bindtap="showPopup" class="{{issslect? 'citybox drepcolor' : ' citybox'}}">{{initCity}}</view>
+        <view class="title_box">卖出克重</view>
+        <view class="weightbox flex-between">
+          <view class="{{isinput?'yellowfont':''}}" >
+          <input class="weui-input"  placeholder="请输入克重" maxlength="6" value="{{weight}}" bindinput="handleInput2" placeholder="0.00" />
+            <!-- <el-input v-model="weight" placeholder="请输入克重" type="tel" @input="handleInput2" maxlength="6" :class="isinput?'yellowfont':''" ></el-input> -->
+          </view>
+          <view class="unit">克</view>
+        </view>
+        <view class="title_box">预估金额</view>
+        <span class="moneybox flex-between " >
+          <view class="countMumber"  class="{{isinput?'yellowfont':''}}">{{countMumber}}</view>
+          <view>元</view>
+        </span>
+      </view>
+      <view class="btnbox" bindtap="postData">立即定价</view>
+      <view class="tipBox">
+        <view>温馨提示</view>
+        <view class="div">1、开盘时间：周一至周五10:00-23:30，周六为11:00-23:30,周日不支持定价。</view>
+        <view class="div">2、定价品类：黄金各品类按照黄金9999定价并填写预估克重即可，中鑫金收到货物后将为您返回准确折足重量供您确认。</view>
+        <view class="div">3、交付方式：定价审核通过后，请在72小时内面付或者顺丰发货将货物送至中鑫金，定价不发货属于违约行为，我司将追究法律责任，请您谨慎定价。 </view>
+        <view class="div">4、关于结算：中鑫金收货后将严格按照国标进行精密检测，并返回详细结算单供用户确认，确认无误后进行打款</view>
+        <view class="div">5、如有任何疑问，请拨打客服电话4001-886-722,中鑫金将竭诚为您服务。</view>
+      </view>
+      <!--  @click="postData" -->
+      <view>
+        <!-- <van-dialog
+        id="van-dialog"
+        show="{{ dialogShow }}"
+        message="资质原件拍照或扫描可以不加盖公章，复印件需盖章\n\n如是三证合一，则无需提供税务登记证、组织机构代码证"
+        message-align="left"
+        confirm-button-text="知道了"
+        confirm-button-color="#EE712F"
+        use-title-slot
+        > -->
+      <!-- 停盘提示 -->
+        <van-popup
+          show="{{ ceringModel }}"
+          position="center"
+          bind:close="onClose"
+        >
+        <view class="tc titlebox">卖金须知</view>
+        <view class="centerbox_dialog">停盘中，暂时无法进行交易，开盘时间周一至周五10:00-23:00</view>
+            <!-- <div class="gocer" @click="ceringModel=false">确定</router-link></div> -->
+        </van-popup>
+
+       <!-- 交易信息确认 -->
+        <van-popup
+          show="{{ comfirbox }}"
+          position="center"
+        >
+        <view class="tc titlebox">订单确认</view>
+          <view class="centerbox_dialog">
+            <view>交易类别：{{initCity}}</view>
+            <view>实时价格：{{pricebox}}元</view>
+            <view>交易克重：{{weight}}克</view>
+            <view>订单金额：{{countMumber}}元</view>
+          </view>
+          <view class="flex popbtn flex-around">
+            <view class="gocer closebtn" bindtap="onClose">取消</view>
+            <view class="gocer" bindtap="postData" data-type="lastpost">确定</view>
+          </view>
+        </van-popup>
+<!--         
+         <van-dialog v-model="showorder">
+          <div class="title">订单确认</div>
+          <div class="centerbox_dialog">
+            <p>交易类别：{{initCity}}</p>
+            <p>实时价格：{{pricebox}}元</p>
+            <p>交易克重：{{weight}}克</p>
+            <p>订单金额：{{countMumber}}元</p>
+          </div>
+          <div class="flex popbtn">
+            <div class="gocer closebtn" @click="closepop">取消</router-link></div>
+            <div class="gocer" @click="postData('postDataf')">确定</router-link></div>
+          </div>
+        </van-dialog> -->
+
+
+        <!-- 产品类别 -->
+        <van-popup
+          show="{{ show }}"
+          position="bottom"
+          bind:close="onClose"
+        >
+          <van-area area-list="{{ productselse }}" cancel-button-text=""  bind:confirm="confirmF"/>
+        </van-popup>
+      </view>
+      <!-- </view> -->
+      <van-toast id="van-toast"/>
+  </view>

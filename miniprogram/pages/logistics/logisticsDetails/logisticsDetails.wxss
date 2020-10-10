@@ -1,0 +1,263 @@
+page{
+  background: #f7f7f7;
+}
+.arrownpx{
+  width: 120rpx;
+  position: absolute;
+  left: 123rpx;
+  top:10rpx
+}
+.logtime .infolist:nth-last-child(1) .borderbox:before{
+  content: none;
+}
+
+.remarkbox{
+  width: 430rpx;
+  color:#8E8E90
+}
+.borderbox .b{
+  width: 13rpx;
+  height: 13rpx;
+  background: #D7D7D7;
+  display: block;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+.borderbox{
+  position: relative;
+}
+.demo-loading{
+  padding: 50rpx 0;
+  margin: 0 auto;
+}
+.borderbox::before{
+  content: '';
+  display: block;
+  height: 105rpx;
+  width: 2rpx;
+  background: #D7D7D7;
+  position: absolute;
+  top:0;
+  left: 6rpx;
+}
+.logtime{
+  padding: 40rpx 20rpx 40rpx 0rpx!important;
+}
+.timebox{
+  text-align: right;
+  width: 150rpx;
+  font-size: 22rpx;
+  margin-right: 40rpx;
+}
+.cityname{
+  position: relative;
+  color:#000000;
+  font-size: 32rpx;
+}
+.cityname .b{
+  display: inline-block;
+}
+.cityname .i{
+  position: relative;
+  top:-15rpx;
+  color:#000000;
+  font-style: normal;
+  font-size: 26rpx;
+  margin: 0 50rpx;
+}
+.citytitle{
+  color:#7A7A7A;
+  font-size: 28rpx;
+}
+.citytime{
+  color:#000000;
+  font-size: 28rpx;
+}
+.peoplebox{
+  border-radius:8rpx;
+  padding: 30rpx 40rpx 30rpx 20rpx;
+  margin: 20rpx;
+  background: #fff;
+}
+.phoneicon{
+  width: 45rpx;
+  height: 45rpx;
+}
+.imgbox{
+  margin-right: 10rpx;
+  position: relative;
+  top:7rpx;
+}
+.bgwhite{
+  background: #fff;
+}
+.imgboxs{
+  margin-right: 20rpx;
+}
+.peoplebox .headicon.imgbox{
+  margin-right: 15rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.peoplebox .headicon{
+  align-items: center;
+  
+}
+.canclebox{
+  border:1rpx solid #E6E6E6;
+  color:#000000;
+  width: 160rpx;
+  height: 64rpx;
+}
+.flex{
+  align-items: baseline;
+}
+.endflex{
+  border-top: 1rpx solid #E6E6E6;
+  padding-top: 20rpx;
+  justify-content: flex-end;
+}
+.endflex .div{
+  margin-left: 20rpx;
+}
+.cityflex{
+  padding: 0 30rpx;
+}
+.gosendproduct{
+  background: #FFB606;
+  color:#fff;
+  border-radius:32rpx;
+  width:160rpx;
+  height:64rpx;
+  text-align: center;
+  line-height: 64rpx;
+  margin-right: 26rpx;
+  font-size: 28rpx;
+}
+.flexs{
+  display: flex
+}
+.bg_gray{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  background: #f7f7f7;
+}
+.centerbox{
+  position: relative;
+  z-index: 2;
+}
+.statusbox{
+  color:#FC4E7F;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.onstatusbox{
+  color:#FBAC1E;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.overstatusbox{
+  color:#999999;
+  background: #F0F0F0;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.flex-between{
+  /* background: red; */
+  align-items: center;
+}
+
+.yellowmin{
+  color:#FFB606;
+  border:1rpx solid #FFB606;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  width: 160rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+}
+.msgbox .h2 b{
+  color:#040202
+}
+.msgbox .h2{
+  color:#7A7A7A;
+  padding: 0 30rpx 15rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  padding-top: 30rpx;
+}
+  .msgbox{
+    background: #fff;
+    padding: 0 0rpx 30rpx;
+    width: 710rpx;
+    font-size: 28ox;
+    border-radius: 8rpx;
+    margin: 25rpx 20rpx 30rpx;
+    
+  }
+  .msgbox .flex{
+    margin-bottom: 30rpx;
+   
+  }
+  .msgbox .flex.div:nth-child(1){
+    color:#CCCCCC
+  }
+  .msgbox .flex.div:nth-child(2){
+    color:#333333
+  }
+  .tab_title .span{
+    padding: 20rpx 0rpx 10rpx;
+  }
+  .tab_title{
+    background: #F7F7F7;
+    color:#999999;
+    font-size: 26rpx;
+   
+  }
+  .tab_title .active{
+    position: relative;
+  }
+  .tab_title .active::after{
+    content: '';
+    width: 100%;
+    height: 5rpx;
+    border-radius: 4rpx;
+    background:#FFB606 ;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .iconbox{
+    width: 125rpx;
+  }
+  .titlebox{
+    font-size: 30rpx;
+  }
+  .msg_list{
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #cdcdcd;
+  }
+  .msg_list .time{
+    position: absolute;
+    right: 0;
+    color:#B3B3B3;
+    font-size: 24rpx;
+    font-weight: normal;
+    top: 35rpx;
+    right: 30rpx;
+  }
+  .details{
+    font-size: 24rpx;
+    margin-top: 15rpx;
+    color:#B3B3B3
+  }
