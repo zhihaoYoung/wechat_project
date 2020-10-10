@@ -1,0 +1,92 @@
+<view class="">
+    <view class="bgback"></view>
+    <view class="topcenter">
+    <view class="user">客户姓名：{{uesername.name}}</view>
+    <view class="user">联系电话：{{uesername.phone}}</view>
+    <view class="user">顺丰单号：{{uesername.orderNoExpress}}</view>
+    <!---->
+    <view class="tablebox table"  vx:if="wuLiaoOrdershow" >
+      <view class="tr sellbox" >
+        <view class="th" colspan="6">物料明细单</view>
+      </view>
+      <view class="tr sellbox" >
+        <view class="th" colspan="6">开单时间： {{wuLiaoOrder.date }}
+          物料单号：{{wuLiaoOrder.orderNoLaiLiao}}</view>
+      </view>
+      <view class="tr">
+        <view class="th">序号</view>
+        <view class="th">类别</view>
+        <view class="th">物料克重</view>
+        <view class="th">熔后克重</view>
+        <view class="th">含重</view>
+        <view class="th">折足克重</view>
+      </view>
+      <!--  v-for="(items,index) in wuLiaoOrder.itemList" :key="index" -->
+      <!-- wx:for="{{datalist.itemList}}" wx:key="name" wx:for-item="items" -->
+      <view class="tr" wx:for="{{saleOrdershow}}" wx:key="items.date" wx:for-item="items" wx:for-index="bindex" >
+        <view class="td">{{bindex+1}}</view>
+        <view class="td">{{items.name}}</view>
+        <view class="td">{{items.weight}}</view>
+        <view class="td">{{items.weightRongHou}}</view>
+        <view class="td">{{items.percentage}}</view>
+        <view class="td">{{items.weightZeZu}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">物料总重</view>
+        <view class="td">{{wuLiaoOrder.weightTotal}}</view>
+        <view class="td">物料熔后克重</view>
+        <view class="td">{{wuLiaoOrder.weightRongHou}}</view>
+        <view class="td">折足总重</view>
+        <view class="td">{{wuLiaoOrder.weightZeZu}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">备注</view>
+        <view class="td" colspan="5">{{wuLiaoOrder.intro}}</view>
+      </view>
+    </view>
+  <!-- v-if="saleOrdershow" -->
+    <view class="tablebox table" wx:if="saleOrdershow">
+      <view class="tr" class="sellbox">
+        <view class="th" colspan="8">卖出结算单</view>
+      </view>
+      <view class="tr">
+        <view class="th">序号</view>
+        <view class="th">类别</view>
+        <view class="th">折足克重</view>
+        <view class="th">结算价格</view>
+        <view class="th">金额</view>
+        <view class="th">状态</view>
+        <view class="th">定价渠道</view>
+        <view class="th">定价时间</view>
+      </view>
+      <view class="tr"  wx:for="{{saleOrder.itemList}}" wx:key="items.date" wx:for-item="items" wx:for-index="bindex" >
+        <view class="td">{{bindex+1}}</view>
+        <view class="td">{{items.name}}</view>
+        <view class="td">{{items.weightZeZu}}</view>
+        <view class="td">{{items.price}}</view>
+        <view class="td">{{items.money}}</view>
+        <view class="td">{{items.status}}</view>
+        <view class="td">{{items.priceKind}}</view>
+        <view class="td">{{items.date}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">折足总重</view>
+        <view class="td">{{saleOrder.weightZeZu}}</view>
+        <view class="td">提纯费</view>
+        <view class="td">{{saleOrder.moneyTiChun}}</view>
+        <view class="td">快递费</view>
+        <view class="td">{{saleOrder.moneyYunFei}}</view>
+        <view class="td">保险费</view>
+        <view class="td">{{saleOrder.moneyBaoXiang}}</view>
+      </view>
+      <view class="tr">
+        <view class="td">合计金额</view>
+        <view class="td" colspan="8">{{saleOrder.moneyTotal}}</view>
+      </view>
+       <view class="tr">
+        <view class="td">备注</view>
+        <view class="td" colspan="8">{{saleOrder.intro}}</view>
+      </view>
+    </view>
+  </view>
+  </view>

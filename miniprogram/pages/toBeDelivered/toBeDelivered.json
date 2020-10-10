@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "待发克重",
+  "usingComponents": {
+    "van-notice-bar": "../../miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-loading": "../../miniprogram_npm/vant-weapp/loading/index"
+  }
+}

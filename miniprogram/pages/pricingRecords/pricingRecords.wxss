@@ -1,0 +1,80 @@
+/* miniprogram/pages/pricingRecords/pricingRecords.wxss */
+.van-tabs__line{
+  background: #FBAC1E!important;
+}
+.van-tabs__wrap--scrollable .van-tab{
+  flex: 0 0 18%!important;
+}
+.demo-loading{
+  padding: 50rpx 0;
+  margin: 0 auto;
+}
+page{
+  height: 100%;
+  background: #f5f5f5;
+}
+.info_0{
+  margin-bottom: 35rpx;
+  font-size: 32rpx;
+  color:#010000
+}
+.info_1,.info_2{
+  margin-bottom: 30rpx;
+}
+.cardfooter{
+  margin-top: 30rpx;
+}
+.pricebox{
+  color:#ffc543;
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+  border: 1px solid #ffc543
+}
+/* .statusBox{
+  background: #D0EEFF;
+  color:#2E9BFB;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  width: 120rpx;
+  text-align: center;
+  line-height: 50rpx;
+  height: 50rpx;
+} */
+.val_black{
+  color:#333333
+}
+.centerbox{
+  color:#CCCCCC;
+  width: 83%;
+  font-size: 28rpx;
+  box-shadow: 0 0 5rpx 5rpx #ececec;
+  margin:30rpx auto 10rpx;
+  padding: 35rpx 35rpx 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.statusbox{
+  color:#2E9BFB;
+  background: #D0EEFF;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.onstatusbox{
+  color:#FC4E7F;
+  background: #FCDAE2;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.overstatusbox{
+  color:#999999;
+  background: #F0F0F0;
+  font-size: 28rpx;
+  border-radius:8rpx;
+  padding: 0 10rpx;
+  font-weight: normal;
+}

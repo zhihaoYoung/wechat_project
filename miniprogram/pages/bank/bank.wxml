@@ -1,0 +1,12 @@
+<!--miniprogram/pages/bank/bank.wxml-->
+<!-- 银行卡管理 -->
+<view class="topborder"></view>
+  <view>
+      <view class="banklist"   wx:for="{{datalist}}" wx:key="id" wx:for-item="items" wx:for-index="index" >
+        <view class="bankbox" >
+          <view class="titlebank">{{items.bankCard.bank}}</view>
+          <view class="bankmunber">{{items.bankCard.num}}</view>
+        </view>
+    </view>
+    <view class="martop">如需修改银行卡账号,请拨打客服电话<view class="b">4001 - 886 - 722</view></view>
+  </view>

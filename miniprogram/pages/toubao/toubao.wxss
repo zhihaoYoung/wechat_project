@@ -1,0 +1,214 @@
+/* miniprogram/pages/toubao/toubao.wxss */
+
+.baoxianfei i{
+  font-style: normal;
+}
+.typebox{
+  border: 0;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+.van-popup{
+  border-radius: 8rpx;
+}
+.centerbox_dialog{
+  font-size: 28rpx;
+  padding: 30rpx 45rpx;
+}
+.yellobox{
+  color:#ffb606
+}
+.leftbor:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ccc;
+  height: 50rpx;
+  width: 2rpx;
+  /* border-right: 1px solid #ccc; */
+}
+.xuzhifooter{
+  border-top: 1rpx solid #ccc;
+  padding: 25rpx 0 ;
+  margin: 0 15rpx;
+}
+.gocer{
+  color:#ffa102;
+  padding: 30rpx 0 ;
+  text-align: center;
+}
+.toubaoxuzhi{
+  width: 600rpx;
+}
+.addressbox{
+  padding-right: 25rpx;
+}
+.righticon{
+  width: 3%;
+  position: absolute;
+  right: 0;
+  top:30rpx
+}
+.inputboxhidden .el-input__inner{
+  border:0;
+  height: auto;
+  text-align: right;
+  font-size: 32rpx;
+}
+.bimg{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: top;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+.el-input__inner{
+      height: 80rpx;
+    }
+  .rulebox{
+    font-size: 24rpx;
+    display: block;
+    padding: 30rpx;
+    border-top:1rpx solid #CCCCCC
+  }
+  .rulebox b{
+    color:#FFB606;
+    font-weight: normal;
+  }
+  .first_flex{
+    border-bottom: 1rpx solid #CCCCCC;
+  }
+  .bgbox{
+    width: 100%;
+    height: 20rpx;
+    background: #f5f5f5;
+  }
+  .titleclaim{
+    margin: 25rpx 0;
+    font-size: 32rpx;
+  }
+  .claimbox{
+    padding: 25rpx 30rpx;
+    margin-bottom: 25rpx;
+  }
+  .titlebox{
+    padding: 25rpx 30rpx;
+    background: #f5f5f5;
+  }
+  .titleboxs{
+    padding: 25rpx 30rpx;
+  }
+ .flexmar .flex-between{
+    margin: 0 30rpx;
+    padding: 25rpx 0;
+   
+  }
+  .flexmar .flex-between .firstbox{
+    color:#999999
+  }
+  .flexmar .flex .firstbox_flex{
+    color:#999999;
+    width: 150rpx;
+    margin-right: 50rpx;
+  }
+  .flexmar .flex{
+    margin: 0 30rpx;
+    padding: 25rpx 0;
+  }
+  .flexmar .citysecion{
+    position: relative;
+    border-bottom: 1rpx solid #cccc;
+
+  }
+  
+  .flexmar{
+    padding-bottom: 100rpx;
+    font-size: 32rpx;
+  }
+  
+  .bottombox span{
+    display: inline-block;
+    margin-right: 15rpx;
+  }
+  .fontbox{
+    padding-left: 30rpx;
+  }
+  .bottombox{
+    border-top:1rpx solid #CCCCCC;
+    background: #fff;
+    z-index: 2;
+    align-items: center;
+    font-size: 36rpx;
+    padding: 0!important;
+    /* padding-left: 30rpx!important; */
+    margin: 0!important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+   
+  
+  }
+  .bottombox .toubao{
+    background: #FFB606;
+    color:#fff;
+    font-size: 36rpx;
+    width: 280rpx;
+    text-align: center;
+    line-height: 100rpx;
+  }
+  .bottombox b{
+    font-size: 32rpx;
+    color:#E63C4C;
+  
+  }
+.wuliubox .van-cell{
+    border-radius: 4rpx;
+    border:1px solid #dcdfe6!important
+  }
+  .weightbox .van-cell{
+    padding: 0!important;
+  }
+  .van-field__input{
+    font-size: 32rpx;
+    text-align: right!important;
+  }
+  .wuliubox .van-field__input{
+    text-align: left!important;
+  }
+  .ininlbok navigator{
+    display: inline-block;
+  }
+  .flexsBox{
+    display: flex;
+  }
+  .ininlbokc{
+    margin-right: 10rpx;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+  .bottombox b i{
+    display: inline-block;
+    margin-right: 10rpx;
+  }
+  .van-icon{
+    line-height: 10rpx!important;
+  }
+  .ahref{
+    color: #ffb606;
+  }
+  .van-checkbox__icon{
+ 
+    width: 30rpx!important;
+    height: 30rpx!important;
+    /* padding-top: -50rpx!important; */
+    margin-top: 8rpx;
+  }
+  .padingonlt{
+    /* margin: 0 25rpx; */
+    margin: 0!important;
+    padding: 25rpx 30rpx!important;
+  }

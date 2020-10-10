@@ -1,0 +1,71 @@
+<wxs module="dateFr" src="../../../filter/dateFr.wxs"></wxs>
+<view class="topborder"></view>
+<view class="centerbox">
+    <view class="">
+    <!-- 快递物流追踪 -->
+      <view class="msgbox">
+        <view class="flex-between h2">
+          <view>运单号：<view class="b">{{datalist.expressNo}}</view></view>
+        </view>
+        <view class="cityflex flex-between ">
+          <view>
+            <view class="cityname flex">
+              <view class="b">{{datalist.fromCity}}</view>
+              <!-- datalist.status == 'TRANSPORT'? '运输中' : ( datalist.status == 'WAIT_SEND' ? '待取件':'已签收') -->
+              <view class="i">运输中</view>
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/arrownpx.png" alt="" class="arrownpx" mode="widthFix"></image>
+              <view class="b">{{datalist.toCity}}</view>
+            </view>
+          </view>
+          <!--  -->
+          <view wx:if="{{datalist.status == 'SIGNED'}}">
+            <view class="citytitle">运单签收时间：</view>
+            <view class="citytime">{{dateFr.dateFormat(datalist.userOrderTime)}}</view>
+          </view>
+          <view wx:else>
+             <view class="citytitle">运单签收时间：</view>
+              <view class="citytime">-</view>
+          </view>
+          <!-- <view>
+            <view>
+              西安市
+            </view>
+            <view class="b">
+              <i>待取件</i>
+            </view>
+            <view>
+              深圳市
+            </view>
+          </view> -->
+        </view>
+      </view>
+        <!-- 快递详情 -->
+        <view class="flex-between peoplebox bgwhite">
+        <view class="flex ">
+            <view class="phoneicon flex imgbox ">
+              <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/peopleIcon.png" alt="" mode="widthFix" ></image>
+            </view>
+            <view>
+              <view>{{datalist.state.empPhone}}</view>
+            </view>
+          </view>
+          <view class="phoneicon imgboxs" bindtap="phonecall" data-phone="{{datalist.state.empPhone}}">
+          <!-- <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/peopleIcon.png" alt="" mode="widthFix"></image> -->
+            <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/phoneIcon.png" alt="" mode="widthFix"  class=""></image>
+          </view>
+        </view>
+       <view class="msgbox logtime">
+       <!-- v-for="(items,index) in " :key="index" class="infolist" -->
+         <view   wx:for="{{datalist.routes}}" wx:key="acceptTime" wx:for-index="bindex" wx:for-item="items">
+          <view class="flex logexpress">
+          <!-- [index].substring(0,5)<br>arrtime[index].substring(6,20) -->
+            <view class="timebox">{{dateFr.dateFormat(items.acceptTime)}}</view>
+            <!-- <view class="timebox">{{dateFr.dateFormat(items.acceptTime)}}</view> -->
+            <view class="borderbox"><view class="b"></view></view>
+            <view class="remarkbox">{{items.remark}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>

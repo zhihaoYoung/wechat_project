@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-loading": "../../miniprogram_npm/vant-weapp/loading/index"
+  },
+  "navigationBarTitleText": "行情",
+  "navigationBarBackgroundColor": "#ffb606",
+  "navigationBarTextStyle": "white"
+}

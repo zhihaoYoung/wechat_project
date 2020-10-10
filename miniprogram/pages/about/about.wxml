@@ -1,0 +1,14 @@
+  <view class="topborder"></view>
+ <view class="h1">深圳市中鑫金责任有限公司</view>
+    <view class="centerbox">
+    <view class="p">深圳中鑫金贵金属责任有限公司是以贵金属交易为主营业务的专业机构，主营“回收提纯”和“兑换销售”两项业务体系。</view>
+    <view class="imgbox">
+      <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/about.png" alt=""  mode="widthFix"  class="aboutimg"></image>
+    </view>
+    <view class="p"> 深圳中鑫金贵金属责任有限公司经国家商标局批准取得了“中鑫金”商标，并将推出“中鑫金”为品牌；公司自创立至今，坚持“诚实、诚信、诚恳”的原则。在运营模式上为客户提供更加便捷的服务为根本，经过不断的努力改进
+      ，形成具有中鑫金特色的报价系统和
+      客户定价、结价、提货和存货的服务模式。针对客户
+      采用一站式服务，优化交易中的繁琐环节，使客户体验到便捷贴心的服务。</view>
+      <view class="p">中鑫金以成为中国具有行业影响力的贵金属服务企业为宗旨，为国内贵金属销售与回购
+        打造专业的交易平台，以便捷的交易方式和诚信真实的态度服务于广大的贵金属从业者！</view>
+        </view>

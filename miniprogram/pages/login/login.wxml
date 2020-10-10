@@ -1,0 +1,22 @@
+<view class="loginpage">
+   <van-toast id="van-toast" />
+  <text class="loginttile">
+    登录
+  </text>
+  <block>
+    <input class="input" placeholder="请输入手机号码" data-prop='username' type="tel" placeholder-class="place-holder" maxlength="11" bindinput='changeInput' ></input>
+  </block>
+  <block>
+    <input class="input" placeholder="请输入密码" type="password" data-prop='password' placeholder-class="place-holder" bindinput='changeInput' maxlength="20" ></input>
+  </block>
+  <view class="btnbox">
+   <button type="primary" class="btn-login" bindtap="loginbox" >登录</button>
+  </view>
+  <view class="flex-between loginfooter">
+    <navigator url="/pages/registered/registered"><text>用户注册</text></navigator>
+    <navigator url="/pages/repassword/repassword"><text>忘记密码</text></navigator>
+  </view>
+  <!-- <view>
+      <image src="/assets/images/wechat.png" mode="widthFix" class="wechatbox" bindtap="wechatlogin"></image>
+  </view> -->
+</view>

@@ -1,0 +1,167 @@
+ <view class="topborder"></view>
+ <view class="flexmar">
+<view class="claimbox">
+<van-toast id="van-toast" />
+    <view class="titleclaim"><b class="bimg">
+    <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/toubao_2.png" alt="" mode="widthFix"></image>
+    </b>顺丰单号</view>
+    <view class="wuliubox">
+      <van-cell-group>
+        <van-field
+          input-class="onlyinput"
+          value="{{ value }}"
+          placeholder="填写物流单号"
+          border="{{ false }}"
+          bind:change="onChange"
+          maxlength="14"
+          data-type="yunliuhao"
+        />
+      </van-cell-group>
+      </view>
+      <!-- <el-input v-model="formdata.deliveryoid" placeholder="填写物流单号" maxlength="30"></el-input> -->
+    </view>
+    <view class="bgbox"></view>
+    <view class="flex-between citysecion">
+      <view class="firstbox upbox">起运地</view>
+      <view class="addressbox" bindtap="hrefaddress">{{startaddress}}</view>
+      <view class="righticon" >
+          <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix"class="rightimages" style="right:-10rpx"></image>
+      </view>
+      <!-- -->
+    </view>
+    <view class="flex-between">
+      <view class="firstbox">目的地</view>
+      <view>中鑫金北京 (万特) 办事处   </view>
+    </view>
+    <view class="titlebox">
+    <b class="bimg"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/toubao_4.png" alt="" mode="widthFix"></image></b>
+    货品内容</view>
+    <view class="flex-between">
+      <view class="firstbox">货品种类</view>
+      <view bindtap="showpopProduct">
+      {{initType}}
+        <!-- <select class="typebox" >
+          <option value="黄金,huangjin">黄金</option>
+          <option value="白银,baiyin">白银</option>
+          <option value="铂金,bojin">铂金</option>
+          <option value="钯金,bajin">钯金</option>
+          <option value="钻石,zhuanshi">钻石</option>
+        </select> -->
+        <i class="el-icon-arrow-right"></i></view>
+    </view>
+
+    <view class="flex-between">
+      <view class="firstbox">货品重量（克）</view>
+    <view class="weightbox">
+      <van-cell-group>
+        <van-field
+          input-class="onlyinput"
+          value="{{ value2 }}"
+          placeholder="填写货品重量（克）"
+          border="{{ false }}"
+          bind:change="onChange"
+          data-type="weight"
+        />
+      </van-cell-group>
+      </view>
+    </view>
+     <view class="titlebox"><b class="bimg"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/toubao_3.png" alt="" mode="widthFix"></image></b>选择保额</view>
+    <view class="flex-between">
+      <view class="firstbox">投保额度（元）</view>
+      <view class="weightbox">
+      <van-cell-group>
+        <van-field
+          input-class="onlyinput"
+          value="{{ value3 }}"
+          placeholder="投保额度(元)"
+          border="{{ false }}"
+          bind:change="onChange"
+          data-type="money"
+          maxlength="7"
+          bind:input="getbaoxinf"
+        />
+      </van-cell-group>
+      </view>
+    </view>
+    <view class="titlebox"><b class="bimg"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/toubao_1.png" alt="" mode="widthFix"></image></b>被保险人</view>
+    <view class="flex first_flex">
+      <view class="firstbox_flex">姓名</view>
+      <view>{{ueserInfo.realName}}</view>
+    </view>
+    <view class="flex">
+      <view class="firstbox_flex">身份证号</view>
+      <view>{{ueserInfo.identificationCard}}</view>
+    </view>
+    <view class="bgbox"></view>
+    <view class="rulebox flex padingonlt" style="disaplay:flex">
+      <view class="ininlbokc">
+        <van-checkbox  
+        value="{{ checkboxShape }}" 
+        checked-color="#FFB606" 
+        shape="square" 
+        data-key="checkboxShape"
+        bind:change="noop"
+        ></van-checkbox>
+      </view>
+      <view class="ininlbokc ">
+      <view class="flexsBox">
+      <view>同意</view>
+      <view class="ahref">
+        <navigator url="/pages/toubao/claimeditdelivery/claimeditdelivery" >《货运基本条例》</navigator>
+       </view>
+       <view class="ahref">
+       <navigator url="/pages/toubao/claimeditHangkongxian/claimeditHangkongxian" >《附加航空险》</navigator>
+       </view>
+       <view class="ahref">
+       <navigator url="/pages/toubao/InsuranceClause/InsuranceClause" >《附加邮包险》</navigator>
+       </view>
+       </view>
+      </view>
+      <!-- <el-checkbox v-model="checkboxbool"></el-checkbox> 同意<b><router-link :to="{name:'InsuranceClause'}">《货运基本条例》</router-link></b> -->
+     <!-- <b><router-link :to="{name:'claimeditHangkongxian'}">《附加航空险》</router-link></b>和<b><router-link :to="{name:'claimeditdelivery'}">《附加邮保险》</router-link></b>-->
+     </view> 
+    <!-- 立即投保 -->
+    <view class="flex-between bottombox">
+      <view class="baoxianfei">
+        <text class="fontbox">保险费: </text> <b><i>¥</i>{{bxfei}}.00</b>
+      </view>
+      <view class="toubao" bindtap="toubaobtn" data-type="btntype">立即投保</view>
+    </view>
+    <!-- 产品类别 -->
+    <van-popup
+      show="{{ show }}"
+      position="bottom"
+      bind:close="onClose"
+    >
+      <van-area area-list="{{ productselse }}" cancel-button-text=""  bind:confirm="confirmF"/>
+    </van-popup>
+  </view>
+
+
+<!-- 投保确认提交 -->
+<van-popup
+    show="{{ comfirtip }}"
+    position="center"
+  >
+    <view class="toubaoxuzhi">
+      <view class="titleboxs tc">信息确认</view>
+      <view class="centerbox_dialog">您的投保信息提交后将上传至保险系统，无法进行修改和删除，为保证保单的有效性和您的财产安全，请仔细核对各项信息。</view>
+      <view class="flex-around xuzhifooter">
+        <view class="leftbor" bindtap="onClosetoubaotip">重新核对</view>
+        <view class="yellobox" bindtap="toubaobtn" data-type="lastpost">确认无误</view>
+      </view>
+    </view>
+</van-popup>
+
+ <!-- 投保须知 -->
+<van-popup
+  show="{{ toubaotip }}"
+  position="center"
+  bind:close="onClosetoubaotip"
+>
+<view class="toubaoxuzhi">
+<view class="tc titleboxs">投保须知</view>
+<view class="centerbox_dialog">为保证保单的有效性，请务必认真填写包括顺丰单号在内的各项保险信息并仔细核对。请勿对同一件货物重复投保，以避免您不必要的支出！</view>
+    <view class="gocer" bindtap="onClosetoubaotip">确定</view>
+    </view>
+</van-popup>

@@ -1,0 +1,49 @@
+<!--miniprogram/pages/message/message.wxml-->
+<view class="topborder"></view>
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="系统消息">
+  <!--  v-for="(items,index) in adminmsg " :key="items.id" @click="msgdetials(items.id)" -->
+   <navigator url="/pages/message/messagedetails/messagesdetails" >
+    <view class="system_msg">
+        <view class="flex msg_list rel">
+          <view class="iconbox">
+            <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/message_2.png" mode="widthFix"></image>
+          </view>
+          <view class="">
+            <b class="time">items.enableTime | formatDate_</b>
+            <p class="titlebox">items.title</p>
+            <view class="details">items.summary...</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </van-tab>
+  <van-tab title="行情消息">
+    <view class="system_msg">
+        <view class="flex msg_list rel">
+          <view class="iconbox">
+            <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/message_3.png" mode="widthFix"></image>
+          </view>
+          <view class="">
+            <b class="time">items.enableTime | formatDate_</b>
+            <p class="titlebox">items.title</p>
+            <view class="details">items.summary...</view>
+          </view>
+        </view>
+      </view>
+  </van-tab>
+  <van-tab title="交易消息">
+  <view class="system_msg">
+        <view class="flex msg_list rel">
+          <view class="iconbox">
+            <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/message_1.png" mode="widthFix"></image>
+          </view>
+          <view class="">
+            <b class="time">items.enableTime | formatDate_</b>
+            <p class="titlebox">items.title</p>
+            <view class="details">items.summary...</view>
+          </view>
+        </view>
+      </view>
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,24 @@
+<view class="topborder"></view>
+<!-- 身份证反面 -->
+<view class="cerbox"  wx:if="{{forkpage}}">
+    <view class="tip">请上传身份证信息，该项信息主要用于身份核对，我们将严格保证您的信息安全。</view>  
+    <view class="rel tc imgboxlist">
+      <image src="{{tempFilePaths}}" style="width:650rpx; height: 450rpx"   wx:if="{{updateimg}}"/>
+      <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/photobox.png"  class="photobox" mode="widthFix"  bindtap="chooseimage" ></image>
+      <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/idCardBack.png" alt="" class="idCard"  mode="widthFix"  wx:if="{{!updateimg}}" ></image>
+    </view>
+    <!-- 信息未确认 -->
+    <view wx:if="{{!usercenter}}" >
+      <view class="h1 tc">拍摄身份证国徽面</view>
+      <view class="p detailsbox">● 建议拍摄时选择光线良好的环境</view>
+      <view class="p detailsbox">● 请务必保证边框完整、字体清晰</view>
+    </view>
+     <!-- 信息已确认 -->
+    <view wx:if="{{usercenter}}">
+      <view class="h1 tc">信息确认</view>
+      <view class="userbox flex"><view class="b">有效时间</view><view class="i">{{idcardtime}}</view></view>
+    </view>
+    <view class="tc">
+      <view class="btn_yellow"  bindtap="nextpage">下一步</view>
+    </view>
+  </view>

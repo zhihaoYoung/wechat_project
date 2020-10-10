@@ -1,0 +1,113 @@
+
+ <view  wx:if="{{!startloading}}" class="loadingbox">
+    <van-loading color="#ffb606" size="38px"  custom-class="demo-loading"/>
+  </view>
+
+<view wx:if="{{startloading}}">
+ <view class="yellowbox" >
+ 
+    <view class="flex-around tab_div ">
+    <!-- :key="index" @click="thanTab(index,items.code)" -->
+      <view wx:for="{{productlist}}" wx:key="code" wx:for-index="bindex" wx:for-item="items" data-code="{{items.code}}" data-indexbox= "{{bindex}}" class="{{thanIndex == bindex ? 'active':''}}" bindtap="tabselect">
+        {{items.name}}
+      </view>
+    </view>
+  </view>
+ <view class="boxgoldprice">
+  <view class="flex-between nowprice" >
+    <view class="leftbox">
+    <!-- :class="redup ? 'redfont':'greenfont'" style="text-align: left;" -->
+      <view class="pricebox flex" >
+        <view>{{pricenowbox.price || '-' }}</view>
+        <view class="arrowboxImg i " wx:if="redup"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/icon_up.png" alt="" mode="widthFix" class="arrowbox"></image></view>
+        <!-- <view class="arrowboxImg i " wx:if="greendown"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/icon_down.png" alt="" mode="widthFix"></image></view> -->
+        </view>
+      <view class="timebox" style="text-align: left;">{{timebox}}</view>
+      <!-- pricenowbox.date || '-' -->
+    </view>
+    <view class="flex flexbox">
+      <view>
+        <view class="price_marb price_marl tl gudingwithd">今开: {{pricenowbox.todayPrice || '-'}}</view>
+        <view class="price_marl gudingwithd tl">昨收: {{pricenowbox.yesterdayPrice || '-'}}</view>
+      </view>
+      <view>
+        <view class="price_marb tl">最高: {{pricenowbox.maxPrice || '-'}}</view>
+        <view>最低: {{pricenowbox.minPrice || '-'}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 菊花加载 -->
+  <view  class="loadigboxdetals" wx:if="{{!havadatabox}}">
+    <van-loading color="#ffb606" size="38px" />
+  </view>
+ 
+  <view class="box" >
+    <ec-canvas id="mychart-one" canvas-id="mychart-bar" ec="{{ ec }}" force-use-old-canvas="true"></ec-canvas>
+  </view>
+    <!--立刻卖金 -->
+   <view class="btnsell" bindtap="sellgoldbtn" > 立即卖金</view>
+</view>
+ <view class="flex-around stepbox" >
+  <view>
+    <view class="iconbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/anquan.png" alt=""  mode="widthFix"></image></view>
+    <view>安全</view>
+  </view>
+  <view>
+    <view class="iconbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/bianjie.png" alt=""  mode="widthFix"></image></view>
+    <view>便捷</view>
+  </view>
+  <view>
+    <view class="iconbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/gaojia.png" alt=""  mode="widthFix"></image></view>
+    <view>高价</view>
+  </view>
+  <view>
+    <view class="iconbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/zhenggui.png" alt=""  mode="widthFix"></image></view>
+    <view>正规</view>
+  </view>
+</view>
+<!-- 回收购流程 -->
+ <view class="Process">
+      <view class="backstep"><view class="b"></view>回收流程</view>
+      <view class="detailsbox">
+        <view class="flex">
+          <view class="imgbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/Pricing_1.png" alt=""  mode="widthFix"></image></view>
+          <view class="fontdetails">
+            <view class="titlebox">货品定价</view>
+            <view>点击“立即卖金”开始定价，定价提交后，中鑫金将进行人工审核，审核一旦通过不支持修改和删除，请在72小时内将货物寄出。</view>
+          </view>
+        </view>
+        <view class="flex">
+          <view class="imgbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/Pricing_2.png" alt=""  mode="widthFix"></image></view>
+          <view class="fontdetails">
+            <view class="titlebox">顺丰发货</view>
+            <view>定价审核通过后，可面付或通过“顺丰发货”寄送货品至本公司; 顺丰取走您的快递后，会为您留下回执面单，请妥善保存。</view>
+          </view>
+        </view>
+        <view class="flex">
+          <view class="imgbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/Pricing_3.png" alt=""  mode="widthFix"></image></view>
+          <view class="fontdetails">
+            <view class="titlebox">货运投保</view>
+            <view>如担心货物安全，可使用平台与太平洋合作的“货运投保”。如运输过程货物丢失，可通过保险进行追偿。</view>
+          </view>
+        </view>
+        <view class="flex">
+          <view class="imgbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/Pricing_4.png" alt=""  mode="widthFix"></image></view>
+          <view class="fontdetails noborder">
+            <view class="titlebox">入库结算</view>
+            <view>货物到达中鑫金后，检测人员将会对货物进行检测，并将结果反馈供您确认。确认无误后财务将在3个小时内完成打款。</view>
+          </view>
+          </view>
+        </view>
+       </view>
+
+         <!-- 停盘提示 -->
+        <van-popup
+          show="{{ ceringModel }}"
+          position="center"
+          bind:close="onClose"
+        >
+        <view class="tc titlebox">提示</view>
+        <view class="centerbox_dialog">停盘中，暂时无法进行交易，开盘时间周一至周五10:00-23:00</view>
+            <!-- <div class="gocer" @click="ceringModel=false">确定</router-link></div> -->
+        </van-popup>
+</view>

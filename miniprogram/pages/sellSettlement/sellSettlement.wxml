@@ -1,0 +1,86 @@
+<!--miniprogram/pages/sellSettlement/sellSettlement.wxml-->
+ <view class="topborder"></view>
+ <view wx:if="{{!query_type}}">
+ <!-- 没有数据 -->
+ <view wx:if="{{nodata}}">
+  <view class="tc emptycenter">
+    <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+    <view class="emptyfont">暂无数据</view>
+  </view>
+ </view>
+ <view wx:if="{{!nodata}}">
+ <view  wx:for="{{datalist}}" wx:key="date" wx:for-item="items">
+  <view class="yeartime">{{items.date}}</view>
+  <view wx:for="{{items.orderList}}" wx:for-item="order_items" wx:key="date">
+      <view class="datacenter">
+      <view class="flex-between listdata" bindtap="hrefDetails" data-orderId="{{order_items.orderId}}" data-payStatus="{{order_items.payStatus}}">
+          <view class="flex"> 
+            <view class="iconfont">
+              卖
+            </view>
+            <view>
+              <text class="weightbox">来料总重：{{order_items.weight}}g</text>
+              <view class="timebox">{{order_items.date}}</view>
+            </view>
+          </view>
+          <view class="flex">
+            <view>
+              <view class="moneybox PendPayment {{order_items.payStatus==0?'PendPayment':(order_items.payStatus == '1' ? 'overgetmoney' : 'toConfirmed')}}">{{order_items.money}}</view>
+              <view  class="statusbox PendPayment {{order_items.payStatus==0?'PendPayment':(order_items.payStatus == '1' ? 'overgetmoney' : 'toConfirmed')}}">
+                {{order_items.payStatus == '0' ? '待付款' : (order_items.payStatus == '1' ? '已付款' : '待确认')}}
+              </view>
+            </view>
+            <view class="arrowicon">
+              <van-icon name="arrow" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+</view>
+
+</view>
+
+<!--待确认金额 -->
+<view wx:if="{{query_type}}">
+<view wx:if="{{emptydata}}">
+  <view class="tc emptycenter">
+    <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+    <view class="emptyfont">暂无数据</view>
+  </view>
+</view>
+<view  wx:if="{{!emptydata}}">
+ <view  wx:for="{{datalist}}" wx:key="index" wx:for-item="items" data-aindex='{{aindex}}'> 
+  <view class="yeartime" wx:if="{{newproductlist[index].ishavadata}}">{{items.date}}</view>
+  <view wx:for="{{items.orderList}}" wx:for-item="order_items" wx:key="date">
+    <view wx:if="{{order_items.payStatus == 2}}">
+      <view class="datacenter">
+      <view class="flex-between listdata" bindtap="hrefDetails" data-orderId="{{order_items.orderId}}" data-payStatus="{{order_items.payStatus}}">
+          <view class="flex">
+            <view class="iconfont">
+              卖 
+            </view>
+            <view>
+              <text class="weightbox">来料总重：{{order_items.weight}}g</text>
+              <view class="timebox">{{order_items.date}}</view>
+            </view>
+          </view>
+          <view class="flex">
+            <view>
+              <view class="moneybox PendPayment {{order_items.payStatus==0?'PendPayment':(order_items.payStatus == '1' ? 'overgetmoney' : 'toConfirmed')}}">{{order_items.money}}</view>
+              <view  class="statusbox PendPayment {{order_items.payStatus==0?'PendPayment':(order_items.payStatus == '1' ? 'overgetmoney' : 'toConfirmed')}}">
+                {{order_items.payStatus == '0' ? '待付款' : (order_items.payStatus == '1' ? '已付款' : '待确认')}}
+              </view>
+            </view>
+            <view class="arrowicon">
+              <van-icon name="arrow" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+</view>
+</view>
+</view>

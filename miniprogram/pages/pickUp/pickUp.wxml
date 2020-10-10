@@ -1,0 +1,86 @@
+<!--  -->
+<view class="tc" wx:if="{{isloading}}">
+  <van-loading custom-class="demo-loading"  />
+</view>
+<view wx:if="{{!isloading}}">
+ <view class="bgcenter">
+    <van-toast id="van-toast" />
+ <view class="mapbox">
+  <map id="map" longitude="116.371782" latitude="39.943634" scale="18" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" 
+ bindregionchange="regionchange"
+ show-location style="width: 100%; height: 300px;"></map>
+ </view>
+
+<view class="secondbox" style="z-index:88">
+    <view class="addressbox">
+    <!--  @click="hrefbox" -->
+      <view class="borderBottom rel">
+      <!-- :class="address_show == true ? 'yellowbox':'' " -->
+        <view class="b"  >● </view>
+        <view wx:if="{{preAddr}}">
+         <navigator url="/pages/address/addresslist?type=pickup">
+            <view class="p addressTitle">{{preAddr}} {{address}}</view>
+            <view class="addressInfo">{{name}} {{phone}}</view>
+            <view class="righticon" >
+                <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix"class="rightimages" style="right:-10rpx"></image>
+            </view>
+           </navigator>
+        </view>
+        <view wx:if="{{!preAddr}}">
+          <navigator url="/pages/address/addresslist?type=pickup">
+            <view class="addressTitle">添加取货地址</view>
+            <view class="addressInfo">请完善取货信息</view>
+            <view class="righticon" >
+                <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix"class="rightimages" style="right:-10rpx"></image>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="rel">
+      <!-- :class="address_show == true ? '':'yellowbox' " -->
+        <view class="b" >● </view>
+        <view class="addressTitle p">中鑫金万特检测中心</view>
+        <view class="addressInfo">中鑫金 4001-886-722</view>
+      </view>
+    </view>
+
+    <!-- 重量 -->
+    <view class="addressbox weightbox">
+      <view class="borderBottom rel">
+        <view class="addressTitle flex-between  ">
+          <view>预估重量</view>
+          <view>
+          <input type="text" maxlength="10"  value='{{content}}'  class="weightboxinput" placeholder="0.00"  bindinput="weightinput"></input>
+          <!-- <el-input v-model="weightbox" placeholder="0.00"maxlength="10"/> -->
+          克</view>
+        </view>
+      </view>
+      <view class="rel">
+        <view class="addressTitle flex-between  ">
+          <view>备注说明</view>
+          <view class="endless">
+          <input type="text" maxlength="50" class="introinput"  bindinput="addressInput"></input>
+          <!-- <el-input v-model="intro" placeholder="请输入备注说明"   maxlength="50"/> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+    <!-- 立即取件，按钮 -->
+    <view class="fixed">
+      <view class="flex-between boxcenter">
+        <view>
+          <view class="b">预计:</view>
+          <view class="redcolor i">¥ {{moneybox}}</view>
+          <view class="rel inblock" wx:if="{{havatip}}">
+            <view class="tipbox" wx:if="{{havefont}}">运费将在结算时统一扣除</view>
+            <view class="minicon" bindtap="showtip">?</view>
+          </view>
+        </view>
+        <view>
+          <view class="btn_yellow" bindtap="Pickupbtn">立即取件</view>
+        </view>
+      </view>
+    </view>
+    </view>
+     </view>

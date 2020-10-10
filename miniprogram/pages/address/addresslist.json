@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-checkbox": "../../miniprogram_npm/vant-weapp/checkbox/index",
+    "van-dialog": "../../miniprogram_npm/vant-weapp/dialog/index",
+    "van-loading": "../../miniprogram_npm/vant-weapp/loading/index",
+    "van-checkbox-group": "../../miniprogram_npm/vant-weapp/checkbox-group/index"
+  },
+  "navigationBarTitleText": "地址管理"
+}

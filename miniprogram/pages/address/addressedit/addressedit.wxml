@@ -1,0 +1,57 @@
+<view class="topborder"></view>
+<view class="martpage">
+<van-cell-group >
+  <van-field
+    value="{{ username }}"
+    clearable
+    data-info ="no1"
+    bind:input="onDescribe"
+    label="联系人"
+    placeholder="请输入联系人"
+    border="{{ true }}"
+  />
+  <van-field
+    value="{{ phone }}"
+    type="tel"
+    bind:input="onDescribe"
+    data-info ="no2"
+    maxlength ="11"
+    label="联系电话"
+    placeholder="请输入联系电话"
+    border="{{ true }}"
+  />
+  <view class="flex addressbox">
+    <text class="addressboxitem">地址</text>
+    <view class="flex-between citybox"  bindtap="showPopup">
+      <view class="initcity rel">
+        {{cityinit}}
+      </view>
+      <view class="arrowbox"><van-icon name="arrow" /></view>
+    </view>
+  </view>
+
+  <van-field
+    value="{{ addressdetails }}"
+    label="详细地址"
+    bind:input="onDescribe"
+    data-info ="no3"
+    type="textarea"
+    placeholder="请填写街道及门牌号"
+    autosize
+    border="{{ true }}"
+  />
+</van-cell-group>
+
+<view class="initbox flex-between">
+ <view>设为默认地址</view>
+ <view><van-checkbox  value="{{ checked }}" checked-color="#FFB606" bind:change="onChange" shape="square"></van-checkbox></view>
+</view>
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  bind:close="onClose"
+>
+  <van-area area-list="{{ areaList }}" cancel-button-text=""  bind:confirm="confirmF"/>
+</van-popup>
+</view>
+ <view class="addressbtn" bindtap="savepost">保存地址</view>

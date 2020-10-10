@@ -1,0 +1,117 @@
+var formatNumber = function(n){
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+ 
+var regYear = getRegExp("(y+)", "i");
+ 
+var dateFormat = function(timestamp,format){
+  if (!format) {
+    format = "yyyy-MM-dd hh:mm:ss";
+  }
+  timestamp = parseInt(timestamp*1000);
+  var realDate = getDate(timestamp);
+  function timeFormat(num) {
+    return num < 10 ? '0' + num : num;
+  }
+  var date = [
+    ["M+", timeFormat(realDate.getMonth() + 1)],
+    ["d+", timeFormat(realDate.getDate())],
+    ["h+", timeFormat(realDate.getHours())],
+    ["m+", timeFormat(realDate.getMinutes())],
+    ["s+", timeFormat(realDate.getSeconds())],
+    ["q+", Math.floor((realDate.getMonth() + 3) / 3)],
+    ["S+", realDate.getMilliseconds()],
+  ];
+  var reg1 = regYear.exec(format);
+  if (reg1) {
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i=0;i<date.length;i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+ 
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1
+        ? v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+var toFixednumber= function(val) {
+  return Number(val).toFixed(2)
+}
+
+var toFixednumberzero= function(val) {
+  return Number(val).toFixed()
+}
+
+
+
+var changeTwoDecimal_f = function (x,name) { 
+  var f_x = parseFloat(x)
+  if (isNaN(f_x)){ 
+    return 0 
+  }
+  if(name == '美元汇率' || name == '白银(T+D)' ){
+    return x 
+  }else if(name == '港金'){
+    return x
+  }else if(name == '美元指数' || name == '伦敦银'){
+      var f_x = parseFloat(x)
+      if (isNaN(f_x)){ 
+        return 0 
+      }
+      var f_x = (x*100)/100
+      var s_x = f_x.toString()
+      var pos_decimal = s_x.indexOf('.')
+      if (pos_decimal < 0){
+        pos_decimal = s_x.length
+        s_x += '.'
+      }
+      while (s_x.length <= pos_decimal + 3){
+        s_x += '0'
+      }
+      return s_x 
+  }else{
+    var f_x = (x*100)/100
+    var s_x = f_x.toString()
+    var pos_decimal = s_x.indexOf('.')
+    if (pos_decimal < 0){
+      pos_decimal = s_x.length
+      s_x += '.'
+    }
+    while (s_x.length <= pos_decimal + 2){
+      s_x += '0'
+    }
+    return s_x
+  }
+  
+}
+
+var changeTwoDecimal_f_three = function (x) { 
+  var f_x = parseFloat(x)
+  if (isNaN(f_x)){ 
+    return 0 
+  }
+  var f_x = (x*100)/100
+  var s_x = f_x.toString()
+  var pos_decimal = s_x.indexOf('.')
+  if (pos_decimal < 0){
+    pos_decimal = s_x.length
+    s_x += '.'
+  }
+  while (s_x.length <= pos_decimal + 3){
+    s_x += '0'
+  }
+  return s_x 
+}
+
+module.exports = {
+  dateFormat: dateFormat,
+  toFixednumberzero: toFixednumberzero,
+  toFixednumber: toFixednumber,
+  changeTwoDecimal_f:changeTwoDecimal_f,
+  changeTwoDecimal_f_three:changeTwoDecimal_f_three,
+}

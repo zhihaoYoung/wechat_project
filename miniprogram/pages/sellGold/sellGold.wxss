@@ -1,0 +1,312 @@
+.loadigboxdetals{
+  height: 420rpx;
+  position: absolute;
+  z-index: 90;
+  top:150rpx;
+  background: #fff;
+  width: 100%;
+  padding-top: 50rpx;
+}
+page{
+  padding-bottom: 30rpx;
+}
+.van-popup{
+  border-radius: 8rpx!important;
+}
+
+.demo-loading{
+  display: block!important;
+  padding: 120rpx 0;
+  margin: 0 auto;
+}
+.titlebox{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.centerbox_dialog{
+  padding: 30rpx;
+  width: 600rpx;
+}
+.loadigboxdetals .van-loading{
+  padding-top: 200rpx;
+}
+.redfont{
+  color:#fa534c!important
+}
+.greenfont{
+  color:#4aba71!important
+}
+.arrowboxImg img{
+  width: 6%;
+}
+.arrowbox{
+  position: relative;
+  left: -10rpx;
+  top:-5rpx;
+  font-size: 40rpx;
+}
+.priceboxcenter{
+  height: 430rpx;
+}
+.centerbox{
+  overflow: hidden;
+  padding-bottom: 140rpx;
+}
+.timebox{
+  color:#333333;
+  font-size: 24rpx;
+}
+.flexbox{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.gudingwithd{
+  width: 160rpx;
+}
+.price_marl{
+  margin-right: 40rpx;
+}
+.price_marb{
+  margin-bottom: 30rpx;
+}
+.nowprice{
+  position: absolute;
+  top:100rpx;
+  top:30rpx;
+  padding: 0 30rpx 30rpx;
+}
+.btnsell{
+  color:#000000;
+  background: #FFB606;
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  padding: 20rpx 20rpx 20rpx;
+  width: 90%;
+  font-weight: bold;
+  margin:150rpx auto 0;
+}
+.stepbox{
+  margin-top: -90rpx;
+  text-align: center;
+  color:#333333;
+  font-size: 26rpx;
+}
+.stepbox .iconbox{
+  margin-bottom: 20rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+.Process .fontdetails{
+  flex: 2 ;
+  color:#B3B3B3;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  padding-right: 20rpx;
+  margin-left: 20rpx;
+  
+}
+.Process .fontdetails .titlebox{
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  color:#333333
+}
+.Process .noborder{
+  border:0
+}
+.Process .detailsbox{
+  padding-top: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 0 10rpx 6rpx #e1e1e1;
+}
+.Process{
+  text-align: left;
+  margin: 0 30rpx;
+  padding-bottom: 40rpx;
+}
+.Process .flex{
+  padding-left: 20rpx;
+  
+}
+.Process .imgbox{
+  width: 66rpx;
+  height: 73rpx;
+}
+.backstep{
+  font-weight: bold;
+  font-size: 32rpx;
+  color:#343434;
+  text-align: left;
+  margin:40rpx 0  30rpx;
+ 
+}
+.backstep .b{
+  width: 10rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  background: #FFB606;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+.tab_div{
+  padding-top: 20rpx;
+  color:#fff;
+  font-size: 30rpx;
+  position: relative;
+  
+}
+.tab_div .active{
+  position: relative;
+ 
+}
+.tab_div .active:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -15rpx;
+  bottom:-60rpx;
+  width: 0;
+  height: 0;
+  transform: rotate(45deg);
+  border-width: 20rpx;
+  border-color: #fff transparent transparent #fff;
+  border-style: solid;
+  border-top-left-radius: 10rpx;
+}
+.bottombox{
+  position: relative;
+  top:-150rpx
+}
+.citybox{
+  color:#CCCCCC;
+  font-size: 40rpx;
+  padding: 0 30rpx;
+}
+.drepcolor{
+  color:#292929
+}
+.van-picker__confirm{
+  font-size: 32rpx;
+}
+.van-picker__columns .van-picker-column:nth-child(2){
+  display: none
+}
+.van-picker-column__item{
+  font-size: 30rpx;
+}
+.el-input__inner{
+  border:0;
+  height: auto;
+  font-size: 40rpx;
+  padding: 0;
+}
+.el-input__inner::placeholder {
+  color:#CCCCCC
+}
+.weightbox{
+  padding: 0 30rpx 30rpx;
+  border-bottom: 1rpx solid #E0E0E0;
+  
+}
+.weightbox .unit{
+  color:#ccc;
+  font-size: 40rpx;
+}
+.moneybox{
+  padding:  0 30rpx;
+  font-size: 40rpx;
+  color:#CCCCCC;
+  
+}
+.moneybox .b{
+  font-weight: normal;
+}
+.title_box{
+  font-size: 28rpx;
+  color:#292929;
+  margin: 0 30rpx;
+  color:#292929;
+  padding: 30rpx 0;
+}
+.btnbox{
+  width: 690rpx;
+  background: #F2AA2E;
+  color:#000000;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 88rpx;
+  border-radius: 8rpx;
+}
+  .tipBox{
+    padding: 40rpx 30rpx 70rpx;
+    color:#ccc;
+    font-size: 24rpx;
+   
+  }
+  .tipBox div{
+    margin-bottom: 8rpx;
+  }
+  .yellowbox{
+    text-align: center;
+    background: #FEAE14;
+    width: 100%;
+    height: 250rpx;
+    border-radius: 0 0 10% 10%;
+    
+  }
+  .arrowboxImg{
+    margin-top: 5rpx;
+    margin-left: 20rpx;
+  }
+  .arrowbox{
+    width: 15rpx;
+  }
+  .leftbox{
+    width: 250rpx;
+  }
+  .tl{
+    text-align: left;
+  }
+  .boxgoldprice{
+    min-height: 800rpx;
+    width: 690rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    position: relative;
+    top:-160rpx;
+    margin: 0 auto;
+    padding: 0rpx 0   0rpx;
+    text-align: center;
+    box-shadow: 0rpx 5rpx 10rpx 3rpx #e2e2e2;
+  }
+  .boxgoldprice .pricebox{
+    font-weight: bold;
+    font-size: 54rpx;
+    color:#FA534C;
+    margin-bottom: 7rpx;
+  }
+  .boxgoldprice .h2{
+    color:#999999;
+    font-weight: normal;
+    font-size: 30rpx;
+  }
+
+  .canvas {
+    width: 640rpx;
+    height: 600rpx;
+    transform: scale(0.5)
+}
+
+.box {
+	width:100%;
+  height:500rpx;
+  position: relative;
+	top: 100rpx;
+	bottom: 0;
+	left: 0;
+  right: 0;
+  z-index: 55;
+} 

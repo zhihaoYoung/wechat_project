@@ -1,0 +1,26 @@
+ <view class="topborder"></view>
+ <van-notice-bar
+  left-icon="volume-o"
+  text="因物流信息存在误差，若存在已发货的订单可自行忽略."
+/>
+    <view class="centerbox"  wx:for="{{datalist}}" wx:key="id" wx:for-item="items">
+      <view class="flex-between info_0">
+        <view>{{items.insuranceDisplayNo}}</view>
+        <view class="statusBox baozhanzhong {{items.status == 0 ? 'statusbox':( items.status == 1 ? 'overstatusbox': 'onstatusbox')}}">{{items.status == 0 ? '保障中':( items.status == 1 ? '已失效': '待生效')}}</view>
+      </view>
+      <view class="info_1">被保人：<text class="val_black"> {{items.name}}</text> </view>
+      <view class="info_2">有效期限：<text class="val_black"> {{items.insuranceDuration}}</text></view>
+      <view class="info_3">投保额度：<text class="val_black"> {{items.insuranceMoney}}元</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view class="flex">
+            <navigator url="/pages/baodan/lipeishuom/lipeishuoming" ><view class="pricebox ">理赔说明</view></navigator>
+            <!-- <navigator url="" > -->
+            <view class="pricebox gosend" bindtap="detailsbox" data-id="{{items.orderNo}}">保单详情</view>
+          </view>
+        </view>
+      </view>
+    </view>

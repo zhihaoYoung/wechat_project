@@ -1,0 +1,159 @@
+ <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+ <view class="topborder"></view>
+<view class="tc" wx:if="{{isloading}}">
+  <van-loading custom-class="demo-loading"  />
+</view>
+<van-tabs active="{{ active }}" bind:change="tabIndex"  wx:if="{{!isloading}}">
+  <van-tab title="全部" name="a">
+    <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+        <view class="flex-between info_0">
+          <view>{{items.goods[0].name}}</view>
+          <view wx:if="{{items.status == 'SUSPENSE'}}" class="statusbox">待审核</view>
+          <view wx:if="{{items.status == 'FAIL'}}" class="statusbox">未通过</view>
+          <view wx:if="{{items.status == 'UNDELIVERED'}}" class="onstatusbox">待发货</view>
+          <view wx:if="{{items.status == 'CANCEL'}}" class="overstatusbox">已取消</view>
+          <view wx:if="{{items.status == 'DONE'}}" class="overstatusbox">已完成</view>
+        </view>
+        <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+        <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+        <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+        <view>
+        <view class="flex-between cardfooter">
+            <view>
+              <van-icon name="ellipsis" size="30px" />
+            </view>
+            <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+              <view class="pricebox">定价详情</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="待审核" >
+   <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+        <view class="flex-between info_0">
+          <view>{{items.goods[0].name}}</view>
+          <view class="statusbox">待审核</view>
+        </view>
+        <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+        <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+        <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+        <view>
+        <view class="flex-between cardfooter">
+            <view>
+              <van-icon name="ellipsis" size="30px" />
+            </view>
+            <view>
+               <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+                <view class="pricebox">定价详情</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      </scroll-view >
+    </van-tab>
+  <van-tab title="未通过">
+    <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+      <view class="flex-between info_0">
+        <view>{{items.goods[0].name}}</view>
+        <view class="statusbox">未通过</view>
+      </view>
+      <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+      <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+      <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view>
+              <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+                <view class="pricebox">定价详情</view>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="待发货">
+  <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+   <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+      <view class="flex-between info_0">
+        <view>{{items.goods[0].name}}</view>
+        <view class="onstatusbox">待发货</view>
+      </view>
+      <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+      <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+      <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view>
+               <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+                <view class="pricebox">定价详情</view>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="已完成">
+  <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+      <view class="flex-between info_0">
+        <view>{{items.goods[0].name}}</view>
+        <view class="overstatusbox">已完成</view>
+      </view>
+      <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+      <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+      <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view>
+             <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+              <view class="pricebox">定价详情</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="已取消">
+   <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox" wx:for="{{datalist}}" wx:key="oid" wx:for-item="items">
+      <view class="flex-between info_0">
+        <view>{{items.goods[0].name}}</view>
+        <view class="overstatusbox">已取消</view>
+      </view>
+      <view class="info_1">定价价格：<text class="val_black"> {{items.goods[0].price}}元/克</text> </view>
+      <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+      <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view>
+            <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+              <view class="pricebox">定价详情</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,354 @@
+ <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+<!-- 加载loading -->
+ <view class="tc" wx:if="{{isloading}}">
+  <van-loading custom-class="demo-loading"  color="#ffb606" size="38px"  />
+</view>
+
+<view class="home" wx:if="{{!isloading}}">
+<view class="flex ulflex topul">
+  <text decode="true" class="firstbox">&nbsp;</text>
+  <view class="li" style="flex:3">商品</view>
+  <view class="li">回购</view>
+  <view class="li">销售</view>
+  <view class="li">高低</view>
+</view>
+<!-- 黄金 -->
+<view class="">
+  <view class="ulcenter"  wx:for="{{product_huangjin_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_huangjin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox">
+        <view class="">
+          {{index+1 == dateFr.toFixednumberzero(product_huangjin_arr.length/2) ?'黄金':' '}}
+        </view>
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+         <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}    
+          </view>
+          <view wx:else>
+            -
+          </view>
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+          
+          <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.high)}}
+          </view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+
+     <view class="flex ulflex   productlist {{index == product_huangjin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{!sendmsg}}">
+      <view class="firstbox">
+        {{index+1 == dateFr.toFixednumberzero(product_huangjin_arr.length/2) ?'黄金':' '}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+        {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont ">{{dateFr.changeTwoDecimal_f(items.productData.high)}}</view>
+          <view class="greenfont ">{{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+  </view>
+  </view>
+<view class="hrxian"></view>
+
+<!-- 铂金 -->
+  <view class="ulcenter"  wx:for="{{product_bojin_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_bojin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox">
+        {{index+1 == dateFr.toFixednumberzero(product_bojin_arr.length/2) ?'铂金':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+        <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+           <!-- {{dateFr.changeTwoDecimal_f(items.productData.huigou)}} -->
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+
+             <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+         
+        </view>
+        <view class="lastli li minfon {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+           {{dateFr.changeTwoDecimal_f(items.productData.high)}}</view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+           {{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+
+     <view class="flex ulflex   productlist {{index == product_bojin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{!sendmsg}}">
+      <view class="firstbox">
+        {{index+1 == dateFr.toFixednumberzero(product_bojin_arr.length/2) ?'铂金':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont"> {{dateFr.changeTwoDecimal_f(items.productData.high)}}</view>
+          <view class="greenfont"> {{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+  </view>
+
+<view class="hrxian"></view>
+
+<!-- 钯金 -->
+  <view class="ulcenter"  wx:for="{{product_bajin_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_bajin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox">
+        {{index+1 == dateFr.toFixednumberzero(product_bajin_arr.length/2) ?'钯金':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+          <!-- {{dateFr.changeTwoDecimal_f(items.productData.huigou)}} -->
+          
+
+          <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+          <!-- {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}} -->
+
+          
+          <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.high)}}</view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+
+     <view class="flex ulflex   productlist {{index == product_bajin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{!sendmsg}}">
+      <view class="firstbox">
+        {{index+1 == dateFr.toFixednumberzero(product_bajin_arr.length/2) ?'钯金':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+        {{dateFr.changeTwoDecimal_f(items.productData.huigou)}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou)}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.high)}}</view>
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.low)}}</view>
+        </view>
+    </view>
+  </view>
+
+
+<view class="hrxian"></view>
+<!-- 白银 -->
+  <view class="ulcenter"  wx:for="{{product_baiyin_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_baiyin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox ">
+        {{index+1 == dateFr.toFixednumberzero(product_baiyin_arr.length/2) ?'白银':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}  {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+
+          <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f_three(items.productData.huigou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+          
+          <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f_three(items.productData.xiaoshou)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f_three(items.productData.high)}}</view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f_three(items.productData.low)}}</view>
+        </view>
+    </view>
+
+     <view class="flex ulflex   productlist {{index == product_baiyin_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{!sendmsg}}">
+      <view class="firstbox ">
+        {{index+1 == dateFr.toFixednumberzero(product_baiyin_arr.length/2) ?'白银':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+        {{items.productData.huigou}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{items.productData.xiaoshou}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont">{{items.productData.high}}</view>
+          <view class="greenfont">{{items.productData.low}}</view>
+        </view>
+    </view>
+  </view>
+
+<view class="hrxian"></view>
+<!-- 上交所 -->
+  <view class="ulcenter"  wx:for="{{product_shangjiaosuo_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_shangjiaosuo_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox  {{index+1 ==dateFr.toFixednumberzero(product_shangjiaosuo_arr.length/2)  ?'topless':''}}">
+        {{index+1 == dateFr.toFixednumberzero(product_shangjiaosuo_arr.length/2) ?'上金所':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+
+          
+          <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.huigou,items.productData.name)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+          
+          <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou,items.productData.name)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.high,items.productData.name)}}</view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.low,items.productData.name)}}</view>
+        </view>
+    </view>
+     <view class="flex ulflex rel  productlist {{index == product_shangjiaosuo_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"   wx:if="{{!sendmsg}}" >
+      <view class="firstbox {{index+1 == dateFr.toFixednumberzero(product_shangjiaosuo_arr.length/2)  ?'topless':''}}" >
+        {{index+1 == dateFr.toFixednumberzero(product_shangjiaosuo_arr.length/2) ?'上金所':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+        {{dateFr.changeTwoDecimal_f(items.productData.huigou,items.productData.name)}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou,items.productData.name)}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.high,items.productData.name)}}</view>
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.low,items.productData.name)}}</view>
+        </view>
+    </view>
+  </view>
+
+<view class="hrxian"></view>
+<!-- 国际现货 -->
+  <view class="ulcenter"  wx:for="{{product_guojingxianhuo_arr}}" wx:key="sort" wx:for-item="items" wx:for-index="index" >
+    <view class="flex ulflex   productlist {{index == product_guojingxianhuo_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"  wx:if="{{sendmsg}}">
+      <view class="firstbox  ">
+        {{index+1 == dateFr.toFixednumberzero(product_guojingxianhuo_arr.length/2) ?'现货':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['huigou'] <= items.productData.huigou ? 'redfont':'greenfont'}}">
+          
+
+           <view wx:if="{{items.productData['hgDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.huigou,items.productData.name)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+          
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}} {{new_tuisong_val_before['huangjin'].prices[items['engname']]['xiaoshou'] <= items.productData.xiaoshou ? 'redfont':'greenfont'}}">
+          
+          <view wx:if="{{items.productData['xsDisplay'] == 'SHOW'}}">
+            {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou,items.productData.name)}}
+          </view>
+          <view wx:else>
+            -
+          </view>
+
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['high'] <=  items.productData.high ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.high,items.productData.name)}}</view>
+          <view class="{{new_tuisong_val_before['huangjin'].prices[items['engname']]['low'] <=  items.productData.low ? 'redfont':'greenfont'}}">
+          {{dateFr.changeTwoDecimal_f(items.productData.low,items.productData.name)}}</view>
+        </view>
+    </view>
+     <view class="flex ulflex rel  productlist {{index == product_guojingxianhuo_arr.length-1 ? 'lastul':(index == 0 ? 'firstul':'')}}"   wx:if="{{!sendmsg}}" >
+      <view class="firstbox " >
+        {{index+1 == dateFr.toFixednumberzero(product_guojingxianhuo_arr.length/2) ?'现货':''}}
+      </view>
+      <view class="flex_product li {{(index%2 ==0) ?'oddcolor':''}}" >{{items.productData.name}} </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+        {{dateFr.changeTwoDecimal_f(items.productData.huigou,items.productData.name)}}
+        </view>
+        <view class="li {{(index%2 ==0) ?'oddcolor':''}}">
+         {{dateFr.changeTwoDecimal_f(items.productData.xiaoshou,items.productData.name)}}
+        </view>
+        <view class="lastli li minfont {{(index%2 ==0) ?'oddcolor':''}}">
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.high,items.productData.name)}}</view>
+          <view class="greenfont">{{dateFr.changeTwoDecimal_f(items.productData.low,items.productData.name)}}</view>
+        </view>
+    </view>
+  </view>
+
+
+
+<!-- 时间 是否开盘中 -->
+<view class="flex-between fixedbottom">
+  <view class="timebox">{{timebox}}</view>
+  <view class="open">{{trade_ == true ? '开盘中' : '已停盘'}}</view>
+</view>
+
+  </view>

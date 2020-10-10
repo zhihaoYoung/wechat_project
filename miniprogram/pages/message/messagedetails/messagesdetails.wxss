@@ -1,0 +1,18 @@
+/* miniprogram/pages/message/messagedetails/messagesdetails.wxss */
+.aritce_details{
+  margin: 30rpx;
+}
+.aritce_details .centerbox{
+  color:#333333;
+  font-size: 28rpx;
+}
+.aritce_details .time{
+  color:#B3B3B3;
+  font-size: 24rpx;
+  margin: 30rpx 0;
+}
+.aritce_details .h1{
+  color:#1A1A1A;
+  font-size: 36rpx;
+  text-align: center;
+}

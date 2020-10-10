@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/person/person",
+    "pages/sellGold/sellGoldDeatils/sellGoldDeatils",
+
+    "pages/sellGold/sellGold",
+
+    "pages/toubao/toubao",
+
+
+    "pages/repassword/repassword",
+    "pages/person/login_out/login_out",
+    "pages/certification/certification",
+    "pages/certification/userEdit/userEdit",
+    "pages/successpage/successpage",
+    "pages/certification/backIdcard/backIdcard",
+    "pages/registered/registered",
+    "pages/login/login",
+    "pages/login/wx_login/wx_login",
+    "pages/logistics/logistics",
+    "pages/pickUp/pickUp",
+    "pages/address/addresslist",
+    "pages/toBeDelivered/toBeDelivered",
+    "pages/address/addressedit/addressedit",
+    "pages/sellSettlement/sellSettlement",
+    "pages/sellSettlement/sellSettleTable/sellSettleTable",
+    "pages/pricingRecords/pricingRecords",
+    "pages/message/message",
+    "pages/message/messagedetails/messagesdetails",
+    "pages/bank/bank",
+    "pages/kefu/kefu",
+    "pages/businessDescription/businessDescription",
+    "pages/about/about",
+    "pages/problem/problem",
+    "pages/pricingDetails/pricingDetails",
+    "pages/bindPhone/bindPhone",
+    "pages/logs/logs",
+    "pages/ywdetails/yedetails",
+    "pages/toubao/InsuranceClause/InsuranceClause",
+    "pages/toubao/claimeditHangkongxian/claimeditHangkongxian",
+    "pages/toubao/claimeditdelivery/claimeditdelivery",
+    "pages/baodan/baodan",
+    "pages/baodan/lipeishuom/lipeishuoming",
+    "pages/baodan/baodanxiangqing/baodanxiangqing",
+    "pages/sellSettlement/sellSettlementDeatils/sellSettlementDeatils",
+    "pages/logistics/logisticsDetails/logisticsDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#5c5d5e",
+    "selectedColor": "#FFB606",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "行 情",
+        "iconPath": "/assets/images/footer_2_2.png",
+        "selectedIconPath": "/assets/images/footer_2.png"
+      },
+      {
+        "pagePath": "pages/sellGold/sellGold",
+        "text": "交 易",
+        "iconPath": "/assets/images/footer_1_1.png",
+        "selectedIconPath": "/assets/images/footer_1.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我 的",
+        "iconPath": "/assets/images/footer_3_3.png",
+        "selectedIconPath": "/assets/images/footer_3.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

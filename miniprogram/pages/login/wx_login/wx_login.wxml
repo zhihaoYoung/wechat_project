@@ -1,0 +1,8 @@
+<!--miniprogram/pages/login/wx_login/wx_login.wxml-->
+<view>
+  <view class="loginbox">
+    <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/wechat.png" mode="widthFix" class="wechatbox" ></image>
+  </view>
+  <!-- <view bindtap="wechatlogin" >微信授权登录</view> -->
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="loginbtn">微信授权登录</button>
+</view>

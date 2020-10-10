@@ -1,0 +1,55 @@
+/* miniprogram/pages/kefu/kefu.wxss */
+
+
+page{
+  background: #F7F7F7;
+}
+.headbox{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+.flex2{
+  padding-top: 20rpx;
+}
+.orcodebox{
+  display: block;
+  font-size: 28rpx;
+  color:#999999;
+  width: 416rpx;
+  margin: 50rpx auto 0;
+  text-align: center;
+  padding-bottom: 250rpx;
+}
+.h2{
+  font-size: 36rpx;
+  color:#333333;
+  margin-bottom: 30rpx;
+}
+.detailsbox{
+  font-size: 28rpx;
+  color:#999999
+}
+.phonekefu{
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 50rpx;
+}
+.kefubox{
+  margin: 40rpx 30rpx 0;
+  padding: 25rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  box-shadow: 0 0 9px #ccc;
+}
+.titlebox{
+  margin-bottom: 10rpx;
+  color:#333333;
+  font-size: 36rpx;
+}
+.detailsbox{
+  font-size: 28rpx;
+}

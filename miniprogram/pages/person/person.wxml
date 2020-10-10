@@ -1,0 +1,183 @@
+<!--miniprogram/pages/person/person.wxml-->
+  <view class="bennerimg rel">
+    <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/personbox.png" mode="widthFix"></image>
+    <!-- 头像and信息 -->
+    <view class="userinfo flex">
+      <view class="headbox">
+        <!-- <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/people.png" alt="" mode="widthFix" class="headbox" ></image> -->
+        <image src="{{avatar}}" alt="" mode="widthFix" class="headbox"></image>
+      </view>
+     <view class="userinfobox nologin"  wx:if="{{!haveLogin}}" >
+        <view><navigator url="/pages/login/login">登录/注册</navigator></view>
+        <view class="phone"></view>
+      </view>
+      
+      <view class="userinfobox" wx:if="{{haveLogin}}">
+          <!-- <view><navigator url="/pages/login/login"></navigator></view> -->
+          <!-- 已经认证了 -->
+          <view wx:if="{{auth=='DONE'}}">
+            <view class="namebox">{{realName}}</view>
+            <view class="phone">{{ueserMoible}}</view>
+          </view>
+          <!-- 认证中 -->
+          <view wx:if="{{auth == 'POST'}}">
+            <view class="namebox">认证中</view>
+            <view class="phone">{{ueserMoible}}</view>
+          </view>
+          <!-- 认证中 -->
+          <view wx:if="{{auth == 'UNPOST'}}">
+            <navigator url="/pages/certification/certification">
+              <view class="namebox">前往认证</view>
+              <view class="phone">{{ueserMoible}}</view>
+            </navigator>
+          </view>
+       </view> 
+    </view>
+    <!-- 右箭头 -->
+    <navigator url="/pages/person/login_out/login_out" wx:if="{{haveLogin}}">
+      <view class="rightboxcenter" >
+        <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix" class="headertopright"></image>
+      </view>
+    </navigator>
+  </view>
+<!-- 代发货/待确认 -->
+<view class="flex msgbox rel">
+  <!-- 认证中的遮罩 -->
+  <view class="firstfilter" bindtap="return_tap" data-type="{{auth}}" wx:if="{{auth == 'POST' || auth == 'UNPOST'}}"></view>
+  <view class="firstdiv rel">
+    <navigator url="/pages/toBeDelivered/toBeDelivered" >
+    <!-- <navigator url="/pages/successpage/successpage?type=zhuce" open-type="redirect"> -->
+      <view><b class="redfont">{{count}}</b> g</view>
+      <view>待发货克重(克）</view>
+      <view class="righticon" style="right:10px">
+      <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix" class="rightimages"></image>
+      </view>
+    </navigator>
+  </view>
+  <view  class="seconddiv rel">
+    <navigator url="/pages/sellSettlement/sellSettlement?type=tobecomfir" >
+        <view><b class="redfont">{{user_money}}</b> 元</view>
+        <view>待确认金额(元）</view>
+        <view class="righticon" >
+          <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/righticon.png" alt="" mode="widthFix"class="rightimages" style="right:-10rpx"></image>
+        </view>
+      </navigator>
+  </view>
+</view>
+
+<!-- 盒子图标 -->
+    <view class="centerbox rel">
+    <view class="firstfilter" bindtap="return_tap" data-type="{{auth}}" wx:if="{{auth == 'POST' || auth == 'UNPOST'}}"></view>
+      <view class="list">
+        <view class="mintitle">平台服务</view>
+        <view class="flex">
+          <view class="flexbox">
+            <navigator url="/pages/pricingRecords/pricingRecords" >
+                <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_5.png" alt="" mode="widthFix"></image></view>
+                <view>定价记录</view>
+            </navigator>
+          </view>
+          <view class="flexbox">
+             <navigator url="/pages/sellSettlement/sellSettlement" >
+              <view class="imgminbox"><image src="/assets/images/mailiaojiesuan.png" alt="" mode="widthFix"></image></view>
+              <view>卖料结算</view>
+              </navigator>
+          </view>
+          <view class="flexbox">
+            <!-- <navigator url="/pages/baodan/baodan" > -->
+            <navigator url="/pages/pickUp/pickUp" >
+              <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_8.png" alt="" mode="widthFix"></image></view>
+              <view>顺丰发货</view>
+               </navigator>
+          </view>
+          <view class="flexbox">
+              <navigator url="/pages/toubao/toubao" >
+              <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_7.png" alt="" mode="widthFix"></image></view>
+              <view>货运投保</view>
+              </navigator>
+          </view>
+        </view>
+      </view>
+      <view class="list">
+        <view  class="mintitle">常用工具</view>
+        <view class="flex">
+          <view class="flexbox">
+            <navigator url="/pages/logistics/logistics" >
+            <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/addressicon.png" alt="" mode="widthFix"></image></view>
+            <view>快递查询</view>
+            </navigator>
+          </view> 
+            <view class="flexbox">
+            <navigator url="/pages/baodan/baodan" >
+            <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/baodan.png" alt="" mode="widthFix"></image></view>
+            <view>我的保单</view>
+            </navigator>
+          </view>
+           <view class="flexbox">
+             <navigator url="/pages/problem/problem" >
+              <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_3.png" alt="" mode="widthFix"></image></view>
+              <view>常见问题</view>
+              </navigator>
+          </view>
+           
+           <view class="flexbox">
+            <navigator url="/pages/address/addresslist" >
+            <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_4.png" alt="" mode="widthFix"></image></view>
+            <view>地址管理</view>
+            </navigator>
+          </view>
+           <!-- <view class="flexbox">
+              <navigator url="/pages/bank/bank" >
+                <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_10.png" alt="" mode="widthFix"></image></view>
+                <view>银行账号</view>
+              </navigator>
+          </view> -->
+            <!---->
+        </view>
+        <view class="flex">
+        <view class="flexbox">
+             <navigator url="/pages/kefu/kefu" >
+              <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_2.png" alt="" mode="widthFix"></image></view>
+              <view>我的客服</view>
+              </navigator>
+          </view>
+        <view class="flexbox">
+            <navigator url="/pages/about/about" >
+            <view class="imgminbox"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/person_1.png" alt="" mode="widthFix"></image></view>
+            <view>关于我们</view>
+            </navigator>
+          </view> 
+         
+        </view>
+      </view>
+    </view>
+    <!-- 未认证 -->
+    <van-dialog
+        use-slot
+        title=""
+        show="{{ cershow }}"
+      >
+         <view class="title">提示</view>
+          <view class="centerbox_dialog">您的账号还未认证，暂无此项权限</view>
+          <view class="gocer flex-around">
+            <view bindtap="hideDialog"  class="canclebox">取消</view>
+            <navigator url="/pages/certification/certification">去认证</navigator>
+          </view>
+      </van-dialog>
+
+    <!-- 认证中 -->
+    <van-dialog
+        use-slot
+        title=""
+        show="{{ cershow_ing }}"
+      >
+         <view class="title">提示</view>
+          <view class="centerbox_dialog">您的认证信息正在审核中，请稍后查看</view>
+          <view class="gocer flex-around">
+            <view bindtap="hideDialog" >确定</view>
+          </view>
+      </van-dialog>
+
+    <!-- 底部上班时间 -->
+     <!-- <view class="tc footerbox">工作时间：<b>周一至周六10:00-23:30</b></view> -->
+      <block><image src="/assets/images/personfooter.png" alt="" class="footerboximg"  mode="widthFix"></image></block>

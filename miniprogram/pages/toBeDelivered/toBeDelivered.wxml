@@ -1,0 +1,38 @@
+  <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+ <view class="topborder"></view>
+ <van-notice-bar
+  left-icon="volume-o"
+  text="因物流信息存在误差，若存在已发货的订单可自行忽略."
+/>
+<view class="tc" wx:if="{{isloading}}">
+  <van-loading custom-class="demo-loading"  />
+</view>
+<view  wx:if="{{!isloading}}">
+ <view wx:if="{{nodata}}">
+  <view class="tc emptycenter">
+    <image src="/assets/images/custom-empty-image.png" mode="widthFix" class="emptybox"></image>
+    <view class="emptyfont">暂无数据</view>
+  </view>
+ </view>
+ <scroll-view scroll-y='true' bindscrolltolower='lower' style="height:{{windowsheight}}px">
+    <view class="centerbox"  wx:for="{{datalist}}" wx:key="oid" wx:for-item="items" wx:for-index="index">
+      <view class="flex-between info_0">
+        <view>{{items.goods[0].name}}</view>
+        <view class="statusBox">待发货</view>
+      </view>
+      <view class="info_1">定价价格：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].price)}}元/克</text> </view>
+      <view class="info_2">定价克重：<text class="val_black"> {{dateFr.toFixednumber(items.goods[0].weight)}}克</text></view>
+      <view class="info_3">定价时间：<text class="val_black"> {{dateFr.dateFormat(items.time)}}</text></view>
+      <view>
+      <view class="flex-between cardfooter">
+          <view>
+            <van-icon name="ellipsis" size="30px" />
+          </view>
+          <view bindtap="hrefDetails" data-goods="{{items.goods[0]}}" data-time="{{items.time}}" data-status="{{items.status}}" data-oid="{{items.oid}}" >
+            <view class="pricebox">定价详情</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+    </view>

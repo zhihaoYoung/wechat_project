@@ -1,0 +1,68 @@
+<view class="centerbox">
+      <!-- 是否失效 -->
+     <view class="white step_1 rel">
+       <view class="h1">{{listdata.companyName}}</view>
+       <view class="p">no.{{listdata.expressNo}}</view>
+       <view class="p"><image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/computericon.png" class="imgbox"  mode="widthFix" ></image>由中国太平洋保险有限公司承保</view>
+       <view class="btn_see"><navigator url="/pages/baodan/lipeishuom/lipeishuoming">理赔说明</navigator></view>
+       <view class="isovernow">
+         <!-- "status":1,//保险状态  0 生效中/保障中  1 已失效/已完成  2 待生效 -->
+         <!-- v-if="" -->
+         <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/overgame.png"  mode="widthFix"   alt="" wx:if="{{listdata.status == 1}}" ></image>
+         <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/baozhangzhong.png"   mode="widthFix"  alt=""  wx:if="{{listdata.status == 0}}"></image>
+         <image src="https://can-open-resource.oss-cn-beijing.aliyuncs.com/wechat/amp/images/daishengxiao.png"    mode="widthFix"  alt=""  wx:if="{{listdata.status == 2}}"></image>
+       </view>
+     </view>
+     <!-- 保障内容 -->
+     <view class="white step_2">
+       <view class="h1">保障内容</view>
+       <view class="flex-between">
+         <view class="p">被保险人</view>
+         <view class="p">{{listdata.name}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">保障期限</view>
+         <view class="p">{{listdata.insuranceDuration}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">投保额度</view>
+         <view class="p">{{listdata.insuranceMoney}}元</view>
+       </view>
+       
+       <view class="h1 mart">基本信息</view>
+       <view class="flex-between">
+         <view class="p">投保人</view>
+         <view class="p">{{listdata.insuranceBuyName}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">投保时间</view>
+         <view class="p">{{listdata.date}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">顺丰单号</view>
+         <view class="p">{{listdata.expressNo}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">运输路线</view>
+         <view class="p">{{listdata.insurancePath}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">货品种类</view>
+         <view class="p">{{listdata.goodName}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">货品重量</view>
+         <view class="p">{{listdata.weightg}}</view>
+       </view>
+       <view class="flex-between">
+         <view class="p">保险费</view>
+         <view class="p">{{listdata.insuranceFee}}元</view>
+       </view>
+      
+     </view>
+     
+     <view class="white seerule flex">查看
+     <view class="b"><navigator url="/pages/toubao/claimeditdelivery/claimeditdelivery">《货运基本条例》</navigator></view>
+     <view class="b"><navigator url="/pages/toubao/claimeditHangkongxian/claimeditHangkongxian" >《附加航空险》</navigator></view>
+     和<view class="b"><navigator url="/pages/toubao/InsuranceClause/InsuranceClause">《附加邮包险》</navigator></view></view>    
+    </view>  
